@@ -5,7 +5,7 @@
   table of gallons to liters.
   
   Call this program "GalToLitTable.java"
-  bob
+  bob2
 */ 
 
 class GalToLitTable{
