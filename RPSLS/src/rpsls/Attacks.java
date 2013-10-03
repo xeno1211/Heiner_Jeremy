@@ -23,7 +23,7 @@ public class Attacks {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter your attack (1-5): ");
         this.attack = input.nextInt();
-        if (this.attack <= 5){
+        if (this.attack <= 5 && this.attack > 0){
         System.out.println("\nYour attack is " + this.attack + ".");
         } 
         else{
