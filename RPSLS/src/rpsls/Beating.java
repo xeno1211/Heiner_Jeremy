@@ -1,3 +1,4 @@
+// Luke Brewer and Jeremy
 package rpsls;
 
 public class Beating{

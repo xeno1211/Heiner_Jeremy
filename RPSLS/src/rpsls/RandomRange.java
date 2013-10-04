@@ -1,3 +1,4 @@
+// Luke Brewer and Jeremy
 import java.util.Random;
 
 /** Generate random integers in a certain range. */
