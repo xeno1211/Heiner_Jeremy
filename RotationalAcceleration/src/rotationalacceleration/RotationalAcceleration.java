@@ -6,7 +6,7 @@ package rotationalacceleration;
 
 /**
  *
- * @author Jeremy
+ * @author Jeremy!
  */
 public class RotationalAcceleration {
 
