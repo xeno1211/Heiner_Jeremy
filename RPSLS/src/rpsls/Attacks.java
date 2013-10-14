@@ -1,6 +1,7 @@
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
+ * Luke Brewer and Jeremy
  */
 package rpsls;
 
@@ -34,7 +35,7 @@ public class Attacks {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter your attack (1-5): ");
         this.attack = input.nextInt();
-        if (this.attack <= 5){
+        if (this.attack <= 5 && this.attack > 0){
         System.out.println("\nYour attack is " + this.attack + ". and your enemy has chosen "+ b +".");
         Beating myBeating = new Beating();
         error = myBeating.getBeating(this.attack,b);
