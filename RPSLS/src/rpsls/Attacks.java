@@ -39,6 +39,7 @@ public class Attacks {
         System.out.println("\nYour attack is " + this.attack + ". and your enemy has chosen "+ b +".");
         Beating myBeating = new Beating();
         error = myBeating.getBeating(this.attack,b);
+        myBeating.getdisplayHow(this.attack,b);
 
         } 
         else{
