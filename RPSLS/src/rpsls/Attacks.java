@@ -24,7 +24,7 @@ public class Attacks {
         // THIS IS NEW CODING!!!!!
         int START = 1;
         int END = 5;
-        char meow = 'q';
+        char error = 'q';
         Random random = new Random();
         long range = (long)END - (long)START + 1;
         long fraction = (long)(range * random.nextDouble());
@@ -37,13 +37,13 @@ public class Attacks {
         if (this.attack <= 5){
         System.out.println("\nYour attack is " + this.attack + ". and your enemy has chosen "+ b +".");
         Beating myBeating = new Beating();
-        meow = myBeating.getBeating(this.attack,b);
+        error = myBeating.getBeating(this.attack,b);
 
         } 
         else{
             System.out.println("Illegal attack. Please try again.");
             getAttack();
         }
-        return meow;
+        return error;
     }
 }
