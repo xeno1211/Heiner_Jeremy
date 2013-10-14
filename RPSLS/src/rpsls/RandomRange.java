@@ -3,7 +3,7 @@ import java.util.Random;
 /** Generate random integers in a certain range. */
 public final class RandomRange {
   
-  public static final void main(String... aArgs){
+  public static final void main (String... aArgs){
     int START = 1;
     int END = 5;
     Random random = new Random();
