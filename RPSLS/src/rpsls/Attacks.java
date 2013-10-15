@@ -37,9 +37,9 @@ public class Attacks {
         this.attack = input.nextInt();
         if (this.attack <= 5 && this.attack > 0){
         System.out.println("\nYour attack is " + this.attack + ". and your enemy has chosen "+ b +".");
-        Beating myBeating = new Beating();
-        error = myBeating.getBeating(this.attack,b);
+        Beating myBeating = new Beating();        
         myBeating.getdisplayHow(this.attack,b);
+        error = myBeating.getBeating(this.attack,b);
 
         } 
         else{
