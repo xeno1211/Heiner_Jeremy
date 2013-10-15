@@ -7,14 +7,12 @@ public class Beating{
    
         if ((playerAttack == 1 && computerAttack==2)||(playerAttack==2 && computerAttack==1))
             {
-            System.out.println("Scissors cuts Paper");
+            System.out.println("Paper covers Rock");
             }
-
-        
-        
+      
         else if ((playerAttack == 2 && computerAttack == 3)||(playerAttack == 3 && computerAttack == 2))
             {
-            System.out.println("Paper covers Rock");
+            System.out.println("Scissors cuts paper");
             }
         
         else if ((playerAttack == 3 && computerAttack == 4)||(playerAttack == 4 && computerAttack == 3))
