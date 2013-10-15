@@ -12,13 +12,10 @@ import java.util.Random;
  * @author Jeremy
  */
 public class Attacks {
-    int rock = 1;
-    int paper = 2;
-    int scissors = 3;
-    int lizard = 4;
-    int spock = 5;
     int attack;
     int b;
+    String attackType;
+    String commputerAttack;
     
     public char getAttack() {
         
@@ -36,10 +33,40 @@ public class Attacks {
         System.out.println("Enter your attack (1-5): ");
         this.attack = input.nextInt();
         if (this.attack <= 5 && this.attack > 0){
-        System.out.println("\nYour attack is " + this.attack + ". and your enemy has chosen "+ b +".");
-        Beating myBeating = new Beating();        
-        myBeating.getdisplayHow(this.attack,b);
-        error = myBeating.getBeating(this.attack,b);
+            if (this.attack == 1){
+                attackType = "Rock";
+            }
+            else if (this.attack == 2){
+                attackType = "Paper";
+            }
+            else if (this.attack == 3){
+                attackType = "Scissors";
+            }
+            else if (this.attack == 5){
+                attackType = "Lizard";
+            }
+            else if (this.attack == 4){
+                attackType = "Spock";
+            }
+            if (b == 1){
+                commputerAttack = "Rock";
+            }
+            else if (b == 2){
+                commputerAttack = "Paper";
+            }
+            else if (b == 3){
+                commputerAttack = "Scissors";
+            }
+            else if (b == 5){
+                commputerAttack = "Lizard";
+            }
+            else if (b == 4){
+                commputerAttack = "Spock";
+            }
+            System.out.println("\nYour attack is " + attackType + ". and your enemy has chosen "+ commputerAttack +".");
+            Beating myBeating = new Beating();        
+            myBeating.getdisplayHow(this.attack,b);
+            error = myBeating.getBeating(this.attack,b);
 
         } 
         else{
