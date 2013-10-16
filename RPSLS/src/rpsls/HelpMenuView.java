@@ -15,7 +15,6 @@ public class HelpMenuView {
         {"G", "The game"},
         {"C", "A computer player"}, 
         {"A", "Attacks"},
-        {"R", "A regular player"},        
         {"Q", "Quit Help"}        
     };
      String action;
@@ -37,22 +36,15 @@ public class HelpMenuView {
             String command = this.getCommand();
             switch (command) {
                 case "G":
-                       System.out.println("The game help");
-//                    this.helpMenuControl.displayBoardHelp();
+                       this.helpMenuControl.displayGameHelp();
                     break;
                 case "C":
-                     System.out.println("The computer help");
-//                    this.helpMenuControl.displayComputerPlayerHelp();
+                     this.helpMenuControl.displayComputerHelp();
                     break;
                 case "A":
-                     System.out.println("The attacks help");
-//                    this.helpMenuControl.displayGameHelp();
+                     this.helpMenuControl.displayAttacksHelp();
                     break;                  
-                case "R":
-                     System.out.println("The player help");
-//                    this.helpMenuControl.displayLocationHelp();
-                    break;
-                 case "Q": 
+                case "Q": 
                      action = "QUIT";
                     return action;
             }
