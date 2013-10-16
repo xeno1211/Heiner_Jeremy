@@ -13,6 +13,7 @@ public class Intro {
      String instructions = "Rock = 1, paper = 2, scissors = 3, Spock = 4, lizard = 5";
      public void displayHelp(){      
         System.out.println(this.instructions);
+        
     }
     
 }

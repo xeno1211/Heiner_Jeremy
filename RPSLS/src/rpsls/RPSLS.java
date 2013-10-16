@@ -23,7 +23,9 @@ public class RPSLS {
         Player newPlayer = new Player();
         newPlayer.getName();
         Intro newHelp = new Intro();
-        newHelp.displayHelp();      
+        newHelp.displayHelp();   
+        HelpMenuView menu = new HelpMenuView();        
+        menu.getInput();   
         Attacks myAttacks = new Attacks();
         for (int i = 0; i<5; i++)
         {
