@@ -10,47 +10,41 @@ import java.util.Scanner;
  *
  * @author Jeremy
  */
-public class HelpMenuView {
+public class MainMenuView {
     
-   
-     private final static String[][] helpMenu = {
-        {"G", "The game"},
-        {"C", "A computer player"}, 
-        {"A", "Attacks"},
-        {"Q", "Quit Help"}        
+     private final static String[][] menuItems = {
+        {"N", "New game"},
+        {"H", "Help!"}, 
+        {"Q", "Quit"}        
     };
      String action;
      // Create instance of the HelpMenuControl (action) class
-     private HelpMenuControl helpMenuControl = new HelpMenuControl();
+    private MainMenuControl mainMenuControl = new MainMenuControl();
     
-    public HelpMenuView() {
-//        
+    public MainMenuView() {
         
     } 
     
     // display the help menu and get the end users input selection
-    public String getHelpInput() {       
+    public String getInput() {       
         
        
-        do {           
-            this.display();      
+        do {
+            this.display();
             
             // get commaned entered
-            
             String command = this.getCommand();
-           
             switch (command) {
-                case "G":
-                       this.helpMenuControl.displayGameHelp();
+                case "N":
+                        mainMenuControl.newGame();
                     break;
-                case "C":
-                     this.helpMenuControl.displayComputerHelp();
-                    break;
-                case "A":
-                     this.helpMenuControl.displayAttacksHelp();
-                    break;                  
+                case "H":
+//                    System.out.println("");
+                      mainMenuControl.getHelp();
+                    break;                        
                 case "Q": 
                      action = "QUIT";
+                     System.out.println("Goodbye!");
                     return action;
             }
         } while (action != "QUIT");  
@@ -63,8 +57,8 @@ public class HelpMenuView {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
 
-        for (int i = 0; i < HelpMenuView.helpMenu.length; i++) {
-            System.out.println("\t   " + helpMenu[i][0] + "\t" + helpMenu[i][1]);
+        for (int i = 0; i < MainMenuView.menuItems.length; i++) {
+            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
         }
         System.out.println("\t===============================================================\n");
     }
@@ -97,9 +91,9 @@ public class HelpMenuView {
     
     // determines if the command is valid
     private boolean validCommand(String command) {
-        String[][] items = HelpMenuView.helpMenu;
+        String[][] items = MainMenuView.menuItems;
 
-        for (String[] item : HelpMenuView.helpMenu) {
+        for (String[] item : MainMenuView.menuItems) {
             if (item[0].equals(command)) {
                 return true;
             }

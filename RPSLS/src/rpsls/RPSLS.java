@@ -17,20 +17,16 @@ public class RPSLS {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        char score[] = {'-','-','-','-','-'};
+    public static void main(String[] args) {        
         RPSLS myGame = new RPSLS();
         Player newPlayer = new Player();
-        newPlayer.getName();
-        HelpMenuView menu = new HelpMenuView();        
+        newPlayer.getName(); 
+         
+        MainMenuView menu = new MainMenuView();        
         menu.getInput();   
-        Attacks myAttacks = new Attacks();
-        for (int i = 0; i<5; i++)
-        {
+          
         
-        score[i] = myAttacks.getAttack();
-        System.out.println("\n" + score[0] + " " + score[1] + " " + score[2] + " " + score[3] + " " + score[4]);
-        }
+       
         
     }
     

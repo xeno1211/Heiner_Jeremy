@@ -12,7 +12,7 @@ public class HelpMenuControl {
     
 
 
-public HelpMenuControl() {
+    public HelpMenuControl() {
         
     } 
 
