@@ -1,6 +1,6 @@
-// Luke Brewer and Jeremy
-import java.util.Random;
 
+import java.util.Random;
+// Luke Brewer and Jeremy
 /** Generate random integers in a certain range. */
 public final class RandomRange {
   

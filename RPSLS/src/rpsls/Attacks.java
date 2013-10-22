@@ -23,7 +23,7 @@ public class Attacks {
         // THIS IS NEW CODING!!!!!
         int START = 1;
         int END = 5;
-        char error = 'q';
+        char error = 'Q';
         Random random = new Random();
         long range = (long)END - (long)START + 1;
         long fraction = (long)(range * random.nextDouble());
@@ -82,6 +82,9 @@ public class Attacks {
              // does not contain a number        
             System.out.println("Illegal selection. Please type a number 1-5." );
              getAttack();  
+             Beating myBeating = new Beating();        
+             myBeating.getdisplayHow(Integer.parseInt(this.attack),computerChoice);
+             error = myBeating.getBeating(Integer.parseInt(this.attack),computerChoice);
             
            
         }

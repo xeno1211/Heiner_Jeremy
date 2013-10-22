@@ -4,7 +4,7 @@ package rpsls;
 public class Beating{
     public void getdisplayHow(int playerAttack,int computerAttack){
         
-   
+// normal play
         if ((playerAttack == 1 && computerAttack==2)||(playerAttack==2 && computerAttack==1))
             {
             System.out.println("Paper covers Rock");
@@ -56,6 +56,10 @@ public class Beating{
             }
         
     }
+    
+    
+// contingencies
+    
     
     public char getBeating(int playerAttack,int computerAttack){
         if (playerAttack == computerAttack)
@@ -155,7 +159,10 @@ public class Beating{
             System.out.println("LOSE");
             return 'L';
         }
-        return 'q';
+        else {
+            System.out.println("You chose an illegal attack, you automatically LOSE");
+            return 'Q';  
+            }
     }
    
 
