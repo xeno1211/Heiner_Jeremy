@@ -161,7 +161,7 @@ public class Beating{
         }
         else {
             System.out.println("You chose an illegal attack, you automatically LOSE");
-            return 'Q';  
+            return 'L';  
             }
     }
    

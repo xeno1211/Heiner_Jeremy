@@ -19,11 +19,11 @@ public MainMenuControl() {
     public void newGame() {
         char score[] = {'-','-','-','-','-'};
         Attacks myAttacks = new Attacks();
-         for (int i = 0; i<5; i++)
-        {
-        
-        score[i] = myAttacks.getAttack();
-        System.out.println("\n" + score[0] + " " + score[1] + " " + score[2] + " " + score[3] + " " + score[4]);
+         int i=-1;
+         while (i!=4){ //for (int i = 0; i<5; i++)
+            i++;
+            score[i] = myAttacks.getAttack();
+            System.out.println("\n" + score[0] + " " + score[1] + " " + score[2] + " " + score[3] + " " + score[4]);
         }
        displayHelpBoarder();
        

@@ -23,7 +23,7 @@ public class Attacks {
         // THIS IS NEW CODING!!!!!
         int START = 1;
         int END = 5;
-        char error = 'Q';
+        char error = 'L';
         Random random = new Random();
         long range = (long)END - (long)START + 1;
         long fraction = (long)(range * random.nextDouble());
@@ -75,7 +75,7 @@ public class Attacks {
                } 
                else{
                    System.out.println("Illegal attack. Please try again.");
-                   getAttack();
+                   
                }  
         }
         else{
