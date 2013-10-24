@@ -19,9 +19,9 @@ public MainMenuControl() {
     public void newGame() {
         char score[] = {'-','-','-','-','-'};
         Attacks myAttacks = new Attacks();
-         int i=-1;
-         while (i!=4){ //for (int i = 0; i<5; i++)
-            i++;
+        // int i=-1;
+       for (int i = 0; i<5; i++){  //while (i!=4){ 
+           // i++;
             score[i] = myAttacks.getAttack();
             System.out.println("\n" + score[0] + " " + score[1] + " " + score[2] + " " + score[3] + " " + score[4]);
         }
