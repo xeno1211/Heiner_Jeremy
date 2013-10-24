@@ -62,6 +62,7 @@ public class Beating{
     
     
     public char getBeating(int playerAttack,int computerAttack){
+        
         if (playerAttack == computerAttack)
         {
             System.out.println("TIE");
@@ -164,6 +165,14 @@ public class Beating{
             return 'L';  
             }
     }
+    
+//    public void results(){
+//        int playerScore = 0;
+//        int computerScore = 0;
+//        for (int i = 0; i<3; i++){
+//            
+//        }
+//    }
    
 
     
