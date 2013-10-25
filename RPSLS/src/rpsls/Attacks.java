@@ -23,7 +23,7 @@ public class Attacks {
         // THIS IS NEW CODING!!!!!
         int START = 1;
         int END = 5;
-        char error = 'L';
+        char winner = 'L';
         Random random = new Random();
         long range = (long)END - (long)START + 1;
         long fraction = (long)(range * random.nextDouble());
@@ -68,9 +68,9 @@ public class Attacks {
                        commputerAttack = "Spock";
                    }
                    System.out.println("\nYour attack is " + attackType + ". and your enemy has chosen "+ commputerAttack +".");
-                   Beating myBeating = new Beating();        
-                   myBeating.getdisplayHow(Integer.parseInt(this.attack),computerChoice);
-                   error = myBeating.getBeating(Integer.parseInt(this.attack),computerChoice);
+                   Results myBeating = new Results();        
+                   myBeating.displayTextResult(Integer.parseInt(this.attack),computerChoice);
+                   winner = myBeating.getResults(Integer.parseInt(this.attack),computerChoice);
 
                } 
                else{
@@ -82,12 +82,12 @@ public class Attacks {
              // does not contain a number        
             System.out.println("Illegal selection. Please type a number 1-5." );
              getAttack();  
-             Beating myBeating = new Beating();        
-             myBeating.getdisplayHow(Integer.parseInt(this.attack),computerChoice);
-             error = myBeating.getBeating(Integer.parseInt(this.attack),computerChoice);
+             Results myBeating = new Results();        
+             myBeating.displayTextResult(Integer.parseInt(this.attack),computerChoice);
+             winner = myBeating.getResults(Integer.parseInt(this.attack),computerChoice);
             
            
         }
-        return error;
+        return winner;
     }
 }

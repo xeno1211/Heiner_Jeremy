@@ -11,14 +11,14 @@ import java.util.Scanner;
  *
  * @author Jeremy
  */
-public class RPSLS {
+public class Main {
     
    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {        
-        RPSLS myGame = new RPSLS();
+        Main myGame = new Main();
         Player newPlayer = new Player();
         newPlayer.getName(); 
          
