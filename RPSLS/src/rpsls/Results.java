@@ -62,13 +62,12 @@ public class Results{
     
     
     public char getResults(int playerAttack,int computerAttack){
-        int playerScore = 0;
-        int computerScore = 0;
+        
         for (int i = 0; i<3; i++){
         
             if (playerAttack == computerAttack)
             {
-                System.out.println("TIE");
+                System.out.println("You TIE this match.");
                 return 'T';
             }
             // Rock crushes scissors
@@ -77,15 +76,15 @@ public class Results{
                 // if player chose rock and comp chose scissors
                 if (playerAttack == 1)
                 {
-                    System.out.println("WIN.");
-                    playerScore ++;
+                    System.out.println("You WIN this match.");
+                    
                     return 'W';
                 }
                 // if player chose scissors and comp choose rock
                 else
                 {
-                    System.out.println("LOSE.");
-                    computerScore++;
+                    System.out.println("You LOSE this match.");
+                    
                     return 'L';
                 }
             }
@@ -95,15 +94,15 @@ public class Results{
                 // Player chose paper and comp chose Spock
                 if (playerAttack == 2)
                 {
-                    System.out.println("WIN.");
-                    playerScore++;
+                    System.out.println("You WIN this match.");
+                    
                     return 'W';
                 }
                 // Player chose Spock and comp chose paper
                 else
                 {
-                    System.out.println("LOSE.");
-                    computerScore++;
+                    System.out.println("You LOSE this match.");
+                    
                     return 'L';
                 }
             }
@@ -113,15 +112,15 @@ public class Results{
                 // player chose scissors
                 if (playerAttack == 3)
                 {
-                    System.out.println("WIN.");
-                    playerScore++;
+                    System.out.println("You WIN this match.");
+                    
                     return 'W';
                 }
                 // player choose lizard
                 else
                 {
-                    System.out.println("LOSE.");
-                    computerScore++;
+                    System.out.println("You LOSE this match.");
+                    
                     return 'L';
                 }
             }
@@ -131,15 +130,15 @@ public class Results{
                 // player chose Spock
                 if (playerAttack == 4)
                 {
-                    System.out.println("WIN.");
-                    playerScore++;
+                    System.out.println("You WIN this match.");
+                   
                     return 'W';
                 }
                 // Player chose rock
                 else
                 {
-                    System.out.println("LOSE.");
-                    computerScore++;
+                    System.out.println("You LOSE this match.");
+                    
                     return 'L';
                 }
             }
@@ -150,15 +149,15 @@ public class Results{
                 // player choose lizard
                 if (playerAttack == 5)
                 {
-                    System.out.println("WIN.");
-                    playerScore++;
+                    System.out.println("You WIN this match.");
+                    
                     return 'W';
                 }
                 // player chose paper
                 else
                 {
-                    System.out.println("LOSE.");
-                    computerScore++;
+                    System.out.println("You LOSE this match.");
+                    
                     return 'L';
                 }
             }
@@ -169,15 +168,15 @@ public class Results{
                 // player chose rock
                 if (playerAttack == 1)
                 {
-                    System.out.println("WIN.");
-                    playerScore++;
+                    System.out.println("You WIN this match.");
+                    
                     return 'W';
                 }
                 // player chose lizard
                 else
                 {
-                    System.out.println("LOSE.");
-                    computerScore++;
+                    System.out.println("You LOSE this match.");
+                   
                     return 'L';
                 }
             } 
@@ -187,13 +186,13 @@ public class Results{
 
 
                 System.out.println("WIN");
-                playerScore++;
+                
                 return 'W';
             }
             else if (computerAttack > playerAttack)
             {
                 System.out.println("LOSE");
-                computerScore++;
+                
                 return 'L';
             }
             else {
