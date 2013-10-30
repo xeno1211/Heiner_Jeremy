@@ -54,23 +54,22 @@ public MainMenuControl() {
             // Computer wins game
             else if (score[i] == 'L'){
                 computerScore++;
-                if (computerScore >= 2){
+               
+                if (tiedScore == 2 && computerScore == 1){
+                    System.out.println("Computer won!");
+                    System.out.println("Player score: " + playerScore);
+                   System.out.println("Computer score: " +computerScore);
+                   System.out.println("Tied score: " + tiedScore);         
+                    
+               }
+                    
+                }
+                else if (computerScore >= 2){
                     System.out.println("Computer won!");
                     System.out.println("Player score: " + playerScore);
                    System.out.println("Computer score: " +computerScore);
                    System.out.println("Tied score: " + tiedScore);
                     break;
-                    
-                }
-                else if (tiedScore == 2 && computerScore == 1){
-                    System.out.println("Computer won!");
-                    System.out.println("Player score: " + playerScore);
-                   System.out.println("Computer score: " +computerScore);
-                   System.out.println("Tied score: " + tiedScore);
-                  
-                   
-                    
-               }
             }
             // Tie game
             else if (score[i] == 'T'){

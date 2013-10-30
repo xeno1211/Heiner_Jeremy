@@ -66,6 +66,12 @@ public class HelpMenuView {
         for (int i = 0; i < HelpMenuView.helpMenu.length; i++) {
             System.out.println("\t   " + helpMenu[i][0] + "\t" + helpMenu[i][1]);
         }
+        /*
+        for (int g = 0; g<score[2]; g++){
+                gamesPlayed[g] = helpMenu.gamesPlayed();
+                System.out.println("you have played" + gamesPlayed[g] + "games, so far.");
+        }
+*/
         System.out.println("\t===============================================================\n");
     }
 
