@@ -34,6 +34,7 @@ public class HelpMenuControl {
        
     }    
    public void displayAttacksHelp() {
+        System.out.println("Unsorted list: "); 
         System.out.println();                
         System.out.println( 
                 "\tRock = 1 "
@@ -41,9 +42,35 @@ public class HelpMenuControl {
                 + "\n\tScissors = 3 "
                 + "\n\tSpock = 4 "
                 + "\n\tLizard = 5");
+        System.out.println("Sorted list: ");
+       String[ ] attacks = {"Rock = 1", "Scissors = 3", "Spock = 4", "Lizard = 5"};
+        sortStringBubble(attacks);
+        for ( int k = 0;  k < 4;  k++ )
+                System.out.println("\t" + attacks [ k ] );
         displayHelpBoarder();
        
     }
+    public static void sortStringBubble( String  x [ ] )
+      {
+            int j;
+            boolean flag = true;  // will determine when the sort is finished
+            String temp;
+
+            while ( flag )
+            {
+                  flag = false;
+                  for ( j = 0;  j < x.length - 1;  j++ )
+                  {
+                          if ( x [ j ].compareToIgnoreCase( x [ j+1 ] ) > 0 )
+                          {                                             // ascending sort
+                                      temp = x [ j ];
+                                      x [ j ] = x [ j+1];     // swapping
+                                      x [ j+1] = temp; 
+                                      flag = true;
+                           } 
+                   } 
+            } 
+      }
      public void displayHelpBoarder() {       
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
