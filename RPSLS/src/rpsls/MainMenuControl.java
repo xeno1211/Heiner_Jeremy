@@ -31,68 +31,106 @@ public MainMenuControl() {
             // Player wins game
             if (score[i] == 'W'){
                 playerScore++;
-                
-                if (playerScore >= 2){
+                    if (tiedScore == 2 && playerScore == 1){
+                   System.out.println("Player won!");
+                   System.out.println("Player score: " + playerScore);
+                   System.out.println("Computer score: " +computerScore);
+                   System.out.println("Tied score: " + tiedScore);
+                              
+               }
+                     else if (tiedScore == 1 && computerScore == 1 && playerScore == 1){
+                   System.out.println("Tie Game!");
+                   System.out.println("Player score: " + playerScore);
+                   System.out.println("Computer score: " +computerScore);
+                   System.out.println("Tied score: " + tiedScore);                
+                    
+               }
+                    else if (playerScore >= 2){
                    System.out.println("Player won!");
                    System.out.println("Player score: " + playerScore);
                    System.out.println("Computer score: " +computerScore);
                    System.out.println("Tied score: " + tiedScore);                           
                     break;
                 }
-                else if (tiedScore == 2 && playerScore == 1){
-                    System.out.println("Player won!");
+                    else if (tiedScore == 3){
+                   System.out.println("Tie Game!");
                    System.out.println("Player score: " + playerScore);
                    System.out.println("Computer score: " +computerScore);
                    System.out.println("Tied score: " + tiedScore);
-                  
-                   
-                    
+                   break;
                }
-                
-                
             }
             // Computer wins game
             else if (score[i] == 'L'){
                 computerScore++;
-               
                 if (tiedScore == 2 && computerScore == 1){
-                    System.out.println("Computer won!");
-                    System.out.println("Player score: " + playerScore);
+                   System.out.println("Computer won!");
+                   System.out.println("Player score: " + playerScore);
                    System.out.println("Computer score: " +computerScore);
                    System.out.println("Tied score: " + tiedScore);         
-                    
+                   break;
                }
-                    
-                }
+                 else if (tiedScore == 1 && computerScore == 1 && playerScore == 1){
+                   System.out.println("Tie Game!");
+                   System.out.println("Player score: " + playerScore);
+                   System.out.println("Computer score: " +computerScore);
+                   System.out.println("Tied score: " + tiedScore);                
+                    break;                   
+               } 
                 else if (computerScore >= 2){
-                    System.out.println("Computer won!");
-                    System.out.println("Player score: " + playerScore);
+                   System.out.println("Computer won!");
+                   System.out.println("Player score: " + playerScore);
                    System.out.println("Computer score: " +computerScore);
                    System.out.println("Tied score: " + tiedScore);
                     break;
             }
-            // Tie game
-            else if (score[i] == 'T'){
-                tiedScore++;
-                
-                 if (tiedScore == 3){
-                    System.out.println("Tie Game!");
-                    System.out.println("Player score: " + playerScore);
+                else if (tiedScore == 3){
+                   System.out.println("Tie Game!");
+                   System.out.println("Player score: " + playerScore);
                    System.out.println("Computer score: " +computerScore);
                    System.out.println("Tied score: " + tiedScore);
                    break;
-                   
-                    
                }
-            }
-            
-            else if (tiedScore == 1 && computerScore == 1 && playerScore == 1){
-                    System.out.println("Tie Game!");
-                    System.out.println("Player score: " + playerScore);
+      }
+            // Tie game
+            else if (score[i] == 'T'){
+                tiedScore++;
+                if (tiedScore == 2 && computerScore == 1){
+                   System.out.println("Computer won!");
+                   System.out.println("Player score: " + playerScore);
+                   System.out.println("Computer score: " +computerScore);
+                   System.out.println("Tied score: " + tiedScore);         
+                    break;
+               }
+                
+               else  if (tiedScore == 1 && computerScore == 1 && playerScore == 1){
+                   System.out.println("Tie Game!");
+                   System.out.println("Player score: " + playerScore);
                    System.out.println("Computer score: " +computerScore);
                    System.out.println("Tied score: " + tiedScore);                
-                    
+                    break;
                }
+                else if (computerScore >= 2){
+                   System.out.println("Computer won!");
+                   System.out.println("Player score: " + playerScore);
+                   System.out.println("Computer score: " +computerScore);
+                   System.out.println("Tied score: " + tiedScore);
+                    break;
+            }
+                 else if (tiedScore == 3){
+                   System.out.println("Tie Game!");
+                   System.out.println("Player score: " + playerScore);
+                   System.out.println("Computer score: " +computerScore);
+                   System.out.println("Tied score: " + tiedScore);
+                   break;          
+               }
+                     
+          
+            
+            
+            }
+            
+           
                
                 
               
