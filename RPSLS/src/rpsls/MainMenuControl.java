@@ -74,16 +74,8 @@ public MainMenuControl() {
             // Tie game
             else if (score[i] == 'T'){
                 tiedScore++;
-                if (tiedScore == 1 && computerScore == 1 && playerScore == 1){
-                    System.out.println("Tie Game!");
-                    System.out.println("Player score: " + playerScore);
-                   System.out.println("Computer score: " +computerScore);
-                   System.out.println("Tied score: " + tiedScore);
-                   
-                   
-                    
-               }
-                else if (tiedScore == 3){
+                
+                 if (tiedScore == 3){
                     System.out.println("Tie Game!");
                     System.out.println("Player score: " + playerScore);
                    System.out.println("Computer score: " +computerScore);
@@ -92,9 +84,19 @@ public MainMenuControl() {
                    
                     
                }
+            }
+            
+            else if (tiedScore == 1 && computerScore == 1 && playerScore == 1){
+                    System.out.println("Tie Game!");
+                    System.out.println("Player score: " + playerScore);
+                   System.out.println("Computer score: " +computerScore);
+                   System.out.println("Tied score: " + tiedScore);                
+                    
+               }
+               
                 
               
-            }
+        
             
         }
        displayHelpBoarder();
