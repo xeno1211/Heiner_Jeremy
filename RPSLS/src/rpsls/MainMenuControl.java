@@ -23,13 +23,14 @@ public MainMenuControl() {
         int tiedScore = 0;
         Attacks myAttacks = new Attacks();
         // int i=-1;
-       for (int i = 0; i<3; i++){  //while (i!=4){ 
+        int i=0; //only needed for this for each loop 
+       for (char var : score){//(int i = 0; i<3; i++){  //while (i!=4){ 
            // i++;
-            score[i] = myAttacks.getAttack();
+            score[i]=myAttacks.getAttack();//var = myAttacks.getAttack();//score[i] = myAttacks.getAttack();
             System.out.println("\n" + score[0] + " " + score[1] + " " + score[2]);
-            
+            i++;//only needed in a for each loop 
             // Player wins game
-            if (score[i] == 'W'){
+            if (var == 'W'){// change var to score 
                 playerScore++;
                     if (tiedScore == 2 && playerScore == 1){
                    System.out.println("Player won!");
@@ -61,7 +62,7 @@ public MainMenuControl() {
                }
             }
             // Computer wins game
-            else if (score[i] == 'L'){
+            else if (var == 'L'){
                 computerScore++;
                 if (tiedScore == 2 && computerScore == 1){
                    System.out.println("Computer won!");
@@ -93,7 +94,7 @@ public MainMenuControl() {
                }
       }
             // Tie game
-            else if (score[i] == 'T'){
+            else if (var == 'T'){
                 tiedScore++;
                 if (tiedScore == 2 && computerScore == 1){
                    System.out.println("Computer won!");
@@ -130,11 +131,7 @@ public MainMenuControl() {
             
             }
             
-           
-               
-                
-              
-        
+            
             
         }
        displayHelpBoarder();
