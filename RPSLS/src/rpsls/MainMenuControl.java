@@ -28,8 +28,9 @@ public MainMenuControl() {
            // i++;
             score[i]=myAttacks.getAttack();//var = myAttacks.getAttack();//score[i] = myAttacks.getAttack();
             System.out.println("\n" + score[0] + " " + score[1] + " " + score[2]);
+            var = score[i];
             i++;//only needed in a for each loop 
-            // Player wins game
+             // Player wins game
             if (var == 'W'){// change var to score 
                 playerScore++;
                     if (tiedScore == 2 && playerScore == 1){
