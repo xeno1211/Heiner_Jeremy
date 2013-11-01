@@ -104,6 +104,13 @@ public MainMenuControl() {
                    System.out.println("Tied score: " + tiedScore);         
                     break;
                }
+               else if (tiedScore == 2 && playerScore == 1){
+                   System.out.println("Player won!");
+                   System.out.println("Player score: " + playerScore);
+                   System.out.println("Computer score: " +computerScore);
+                   System.out.println("Tied score: " + tiedScore);
+                              
+               }
                 
                else  if (tiedScore == 1 && computerScore == 1 && playerScore == 1){
                    System.out.println("Tie Game!");
