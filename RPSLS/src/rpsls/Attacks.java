@@ -34,7 +34,7 @@ public class Attacks {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter your attack (1-5): ");
         this.attack = input.next();
-        if(this.attack.matches(".*\\d.*")){
+        if(this.attack.matches("[0-9]")){
             // contains a number
             if (Integer.parseInt(this.attack) <= 5 && Integer.parseInt(this.attack) > 0){
                    if (Integer.parseInt(this.attack) == 1){
