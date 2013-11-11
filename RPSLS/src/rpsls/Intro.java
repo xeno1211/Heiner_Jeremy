@@ -1,7 +1,7 @@
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
- * Luke Brewer and Jeremy
+ * Luke Brewer and Jeremy2
  */
 package rpsls;
 
