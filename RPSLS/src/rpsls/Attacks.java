@@ -13,20 +13,20 @@ import java.util.Random;
  * @author Jeremy
  */
 public class Attacks {
-    public String attack;
-    public int computerChoice;
-    public String attackType;
-    public String commputerAttack;
+    private String attack;
+    private int computerChoice;
+    private String attackType;
+    private String commputerAttack;
     
     public char getAttack() {
         
-        int START = 1;
-        int END = 5;
+        int start = 1;
+        int end = 5;
         char winner = 'L';
         Random random = new Random();
-        long range = (long)END - (long)START + 1;
+        long range = (long)end - (long)start + 1;
         long fraction = (long)(range * random.nextDouble());
-        setComputerChoice((int)(fraction + START));
+        setComputerChoice((int)(fraction + start));
         
        
         
