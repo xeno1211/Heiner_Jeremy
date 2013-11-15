@@ -12,14 +12,28 @@ import java.util.Scanner;
  */
 public class MainMenuView {
     
-     private final static String[][] menuItems = {
+     public static String[][] menuItems = {
         {"N", "New game"},
         {"H", "Help!"}, 
         {"Q", "Quit"}        
     };
-     String action;
+
+    /**
+     * @return the menuItems
+     */
+    private static String[][] getMenuItems() {
+        return menuItems;
+    }
+
+    /**
+     * @param aMenuItems the menuItems to set
+     */
+    private static void setMenuItems(String[][] aMenuItems) {
+        menuItems = aMenuItems;
+    }
+     public String action;
      // Create instance of the HelpMenuControl (action) class
-    private MainMenuControl mainMenuControl = new MainMenuControl();
+    public MainMenuControl mainMenuControl = new MainMenuControl();
     
     public MainMenuView() {
         
@@ -36,20 +50,20 @@ public class MainMenuView {
             String command = this.getCommand();
             switch (command) {
                 case "N":
-                        mainMenuControl.newGame();
+                        getMainMenuControl().newGame();
                     break;
                 case "H":
 //                    System.out.println("");
-                      mainMenuControl.getHelp();
+                      getMainMenuControl().getHelp();
                     break;                        
                 case "Q": 
-                     action = "QUIT";
+                     setAction("QUIT");
                      System.out.println("Goodbye!");
-                    return action;
+                    return getAction();
             }
-        } while (action != "QUIT");  
+        } while (getAction() != "QUIT");  
         
-         return action;
+         return getAction();
     }
 
         // displays the help menu
@@ -57,8 +71,8 @@ public class MainMenuView {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
 
-        for (int i = 0; i < MainMenuView.menuItems.length; i++) {
-            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
+        for (int i = 0; i < MainMenuView.getMenuItems().length; i++) {
+            System.out.println("\t   " + getMenuItems()[i][0] + "\t" + getMenuItems()[i][1]);
         }
         System.out.println("\t===============================================================\n");
     }
@@ -91,14 +105,42 @@ public class MainMenuView {
     
     // determines if the command is valid
     private boolean validCommand(String command) {
-        String[][] items = MainMenuView.menuItems;
+        String[][] items = MainMenuView.getMenuItems();
 
-        for (String[] item : MainMenuView.menuItems) {
+        for (String[] item : MainMenuView.getMenuItems()) {
             if (item[0].equals(command)) {
                 return true;
             }
         }
         return false;
+    }
+
+    /**
+     * @return the action
+     */
+    private String getAction() {
+        return action;
+    }
+
+    /**
+     * @return the mainMenuControl
+     */
+    private MainMenuControl getMainMenuControl() {
+        return mainMenuControl;
+    }
+
+    /**
+     * @param action the action to set
+     */
+    private void setAction(String action) {
+        this.action = action;
+    }
+
+    /**
+     * @param mainMenuControl the mainMenuControl to set
+     */
+    private void setMainMenuControl(MainMenuControl mainMenuControl) {
+        this.mainMenuControl = mainMenuControl;
     }
   
 }

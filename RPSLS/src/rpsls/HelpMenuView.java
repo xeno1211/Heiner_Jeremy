@@ -13,15 +13,29 @@ import java.util.Scanner;
 public class HelpMenuView {
     
    
-     private final static String[][] helpMenu = {
+     public static String[][] helpMenu = {
         {"G", "The game"},
         {"C", "A computer player"}, 
         {"A", "Attacks"},
         {"Q", "Quit Help"}        
     };
-     String action;
+
+    /**
+     * @return the helpMenu
+     */
+    private static String[][] getHelpMenu() {
+        return helpMenu;
+    }
+
+    /**
+     * @param aHelpMenu the helpMenu to set
+     */
+    private static void setHelpMenu(String[][] aHelpMenu) {
+        helpMenu = aHelpMenu;
+    }
+     public String action;
      // Create instance of the HelpMenuControl (action) class
-     private HelpMenuControl helpMenuControl = new HelpMenuControl();
+     public HelpMenuControl helpMenuControl = new HelpMenuControl();
     
     public HelpMenuView() {
 //        
@@ -41,21 +55,21 @@ public class HelpMenuView {
            
             switch (command) {
                 case "G":
-                       this.helpMenuControl.displayGameHelp();
+                    this.getHelpMenuControl().displayGameHelp();
                     break;
                 case "C":
-                     this.helpMenuControl.displayComputerHelp();
+                    this.getHelpMenuControl().displayComputerHelp();
                     break;
                 case "A":
-                     this.helpMenuControl.displayAttacksHelp();
+                    this.getHelpMenuControl().displayAttacksHelp();
                     break;                  
                 case "Q": 
-                     action = "QUIT";
-                    return action;
+                     setAction("QUIT");
+                    return getAction();
             }
-        } while (action != "QUIT");  
+        } while (getAction() != "QUIT");  
         
-         return action;
+         return getAction();
     }
 
         // displays the help menu
@@ -63,8 +77,8 @@ public class HelpMenuView {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
 
-        for (int i = 0; i < HelpMenuView.helpMenu.length; i++) {
-            System.out.println("\t   " + helpMenu[i][0] + "\t" + helpMenu[i][1]);
+        for (int i = 0; i < HelpMenuView.getHelpMenu().length; i++) {
+            System.out.println("\t   " + getHelpMenu()[i][0] + "\t" + getHelpMenu()[i][1]);
         }
         /*
         for (int g = 0; g<score[2]; g++){
@@ -103,14 +117,42 @@ public class HelpMenuView {
     
     // determines if the command is valid
     private boolean validCommand(String command) {
-        String[][] items = HelpMenuView.helpMenu;
+        String[][] items = HelpMenuView.getHelpMenu();
 
-        for (String[] item : HelpMenuView.helpMenu) {
+        for (String[] item : HelpMenuView.getHelpMenu()) {
             if (item[0].equals(command)) {
                 return true;
             }
         }
         return false;
+    }
+
+    /**
+     * @return the action
+     */
+    private String getAction() {
+        return action;
+    }
+
+    /**
+     * @return the helpMenuControl
+     */
+    private HelpMenuControl getHelpMenuControl() {
+        return helpMenuControl;
+    }
+
+    /**
+     * @param action the action to set
+     */
+    private void setAction(String action) {
+        this.action = action;
+    }
+
+    /**
+     * @param helpMenuControl the helpMenuControl to set
+     */
+    private void setHelpMenuControl(HelpMenuControl helpMenuControl) {
+        this.helpMenuControl = helpMenuControl;
     }
   
 }

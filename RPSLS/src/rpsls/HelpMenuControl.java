@@ -82,7 +82,7 @@ public class HelpMenuControl {
              System.out.println("It didn't work.");
         }
     }
-     public void displayHelpBoarder() {       
+     private void displayHelpBoarder() {       
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }

@@ -13,23 +13,23 @@ import java.util.Scanner;
  */
 public class Player {
 
-    String name;
-    boolean validName = true;
+    public String name;
+    public boolean validName = true;
 
     public String getName() {
         
         Scanner input = new Scanner(System.in);
         System.out.println("Enter your name: ");
-        this.name = input.next();
+        this.setName(input.next());
         // If the name contains a digit OR a special character
         if (this.name.matches(".*\\d.*") || this.name.matches(".*\\W.*")) {
             System.out.println("Please enter a valid name. Names are only letters. No numbers or special characters.");
-            validName = false;
+            setValidName(false);
         }
         // Until the name is valid run the loop
-        while (!validName) {
+        while (!isValidName()) {
             System.out.println("Enter a VALID name: ");
-            this.name = input.next();
+            this.setName(input.next());
             // If the name contains a digit OR a special character run through the loop AGAIN...
             if (this.name.matches(".*\\d.*")|| this.name.matches(".*\\W.*")) {
                 System.out.println("Please enter a valid name. Names are only letters. No numbers or special characters.");
@@ -71,5 +71,26 @@ public class Player {
             System.out.println("\nWelcome " + this.name + "!\n");
         }
         return this.name;
+    }
+
+    /**
+     * @return the validName
+     */
+    private boolean isValidName() {
+        return validName;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    private void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @param validName the validName to set
+     */
+    private void setValidName(boolean validName) {
+        this.validName = validName;
     }
 }

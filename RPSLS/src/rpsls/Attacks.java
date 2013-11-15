@@ -7,70 +7,69 @@ package rpsls;
 
 import java.util.Scanner;
 import java.util.Random;
-import java.*;
+
 /**
  *
  * @author Jeremy
  */
 public class Attacks {
-    String attack;
-    int computerChoice;
-    String attackType;
-    String commputerAttack;
+    public String attack;
+    public int computerChoice;
+    public String attackType;
+    public String commputerAttack;
     
     public char getAttack() {
         
-        // THIS IS NEW CODING!!!!!
         int START = 1;
         int END = 5;
         char winner = 'L';
         Random random = new Random();
         long range = (long)END - (long)START + 1;
         long fraction = (long)(range * random.nextDouble());
-        computerChoice =  (int)(fraction + START);
+        setComputerChoice((int)(fraction + START));
         
-        // THIS IS END OF NEW CODE!!!
+       
         
         Scanner input = new Scanner(System.in);
         System.out.println("Enter your attack (1-5): ");
-        this.attack = input.next();
+        this.setAttack(input.next());
         if(this.attack.matches("[0-9]")){
             // contains a number
             if (Integer.parseInt(this.attack) <= 5 && Integer.parseInt(this.attack) > 0){
                    if (Integer.parseInt(this.attack) == 1){
-                       attackType = "Rock";
+                       setAttackType("Rock");
                    }
                    else if (Integer.parseInt(this.attack) == 2){
-                       attackType = "Paper";
+                       setAttackType("Paper");
                    }
                    else if (Integer.parseInt(this.attack) == 3){
-                       attackType = "Scissors";
+                       setAttackType("Scissors");
                    }
                    else if (Integer.parseInt(this.attack) == 5){
-                       attackType = "Lizard";
+                       setAttackType("Lizard");
                    }
                    else if (Integer.parseInt(this.attack) == 4){
-                       attackType = "Spock";
+                       setAttackType("Spock");
                    }
-                   if (computerChoice == 1){
-                       commputerAttack = "Rock";
+                   if (getComputerChoice() == 1){
+                       setCommputerAttack("Rock");
                    }
-                   else if (computerChoice == 2){
-                       commputerAttack = "Paper";
+                   else if (getComputerChoice() == 2){
+                       setCommputerAttack("Paper");
                    }
-                   else if (computerChoice == 3){
-                       commputerAttack = "Scissors";
+                   else if (getComputerChoice() == 3){
+                       setCommputerAttack("Scissors");
                    }
-                   else if (computerChoice == 5){
-                       commputerAttack = "Lizard";
+                   else if (getComputerChoice() == 5){
+                       setCommputerAttack("Lizard");
                    }
-                   else if (computerChoice == 4){
-                       commputerAttack = "Spock";
+                   else if (getComputerChoice() == 4){
+                       setCommputerAttack("Spock");
                    }
-                   System.out.println("\nYour attack is " + attackType + ". and your enemy has chosen "+ commputerAttack +".");
-                   Results myBeating = new Results();        
-                   myBeating.displayTextResult(Integer.parseInt(this.attack),computerChoice);
-                   winner = myBeating.getResults(Integer.parseInt(this.attack),computerChoice);
+                   System.out.println("\nYour attack is " + getAttackType() + ". and your enemy has chosen "+ getCommputerAttack() +".");
+                   Results getResults = new Results();        
+                   getResults.displayTextResult(Integer.parseInt(this.attack), getComputerChoice());
+                   winner = getResults.getResults(Integer.parseInt(this.attack), getComputerChoice());
 
                } 
                else{
@@ -82,12 +81,61 @@ public class Attacks {
              // does not contain a number        
             System.out.println("Illegal selection. Please type a number 1-5." );
              getAttack();  
-             Results myBeating = new Results();        
-             myBeating.displayTextResult(Integer.parseInt(this.attack),computerChoice);
-             winner = myBeating.getResults(Integer.parseInt(this.attack),computerChoice);
+             Results getResults = new Results();        
+             getResults.displayTextResult(Integer.parseInt(this.attack), getComputerChoice());
+             winner = getResults.getResults(Integer.parseInt(this.attack), getComputerChoice());
             
            
         }
         return winner;
+    }
+
+    /**
+     * @return the computerChoice
+     */
+    private int getComputerChoice() {
+        return computerChoice;
+    }
+
+    /**
+     * @return the attackType
+     */
+    private String getAttackType() {
+        return attackType;
+    }
+
+    /**
+     * @return the commputerAttack
+     */
+    private String getCommputerAttack() {
+        return commputerAttack;
+    }
+
+    /**
+     * @param attack the attack to set
+     */
+    private void setAttack(String attack) {
+        this.attack = attack;
+    }
+
+    /**
+     * @param computerChoice the computerChoice to set
+     */
+    private void setComputerChoice(int computerChoice) {
+        this.computerChoice = computerChoice;
+    }
+
+    /**
+     * @param attackType the attackType to set
+     */
+    private void setAttackType(String attackType) {
+        this.attackType = attackType;
+    }
+
+    /**
+     * @param commputerAttack the commputerAttack to set
+     */
+    private void setCommputerAttack(String commputerAttack) {
+        this.commputerAttack = commputerAttack;
     }
 }
