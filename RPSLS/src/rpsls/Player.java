@@ -13,8 +13,8 @@ import java.util.Scanner;
  */
 public class Player {
 
-    public String name;
-    public boolean validName = true;
+    private String name;
+    private boolean validName = true;
 
     public String getName() {
         
