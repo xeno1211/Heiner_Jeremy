@@ -5,6 +5,7 @@
  */
 package rpsls;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 /**
@@ -93,4 +94,36 @@ public class Player {
     private void setValidName(boolean validName) {
         this.validName = validName;
     }
+
+    @Override
+    public String toString() {
+        return "Player{" + "name=" + name + ", validName=" + validName + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 23 * hash + Objects.hashCode(this.name);
+        hash = 23 * hash + (this.validName ? 1 : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Player other = (Player) obj;
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (this.validName != other.validName) {
+            return false;
+        }
+        return true;
+    }
+    
 }

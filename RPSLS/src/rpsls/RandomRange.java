@@ -21,4 +21,10 @@ public final class RandomRange {
     long fraction = (long)(range * aRandom.nextDouble());
     int randomNumber =  (int)(fraction + aStart);    
   }
+
+    @Override
+    public String toString() {
+        return "RandomRange{" + '}';
+    }
+  
 }

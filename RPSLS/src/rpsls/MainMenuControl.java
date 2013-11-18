@@ -156,4 +156,10 @@ public MainMenuControl() {
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
+
+    @Override
+    public String toString() {
+        return "MainMenuControl{" + '}';
+    }
+     
 }

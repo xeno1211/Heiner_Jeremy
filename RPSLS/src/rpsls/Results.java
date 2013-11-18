@@ -205,5 +205,11 @@ public class Results{
         return 'L';
     }
 
+    @Override
+    public String toString() {
+        return "Results{" + '}';
+    }
+    
+
 }
 

@@ -5,6 +5,7 @@
  */
 package rpsls;
 
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -138,4 +139,41 @@ public class Attacks {
     private void setCommputerAttack(String commputerAttack) {
         this.commputerAttack = commputerAttack;
     }
+
+    @Override
+    public String toString() {
+        return "Attacks{" + "attack=" + attack + ", computerChoice=" + computerChoice + ", attackType=" + attackType + ", commputerAttack=" + commputerAttack + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + Objects.hashCode(this.attack);
+        hash = 67 * hash + this.computerChoice;
+        hash = 67 * hash + Objects.hashCode(this.attackType);
+        hash = 67 * hash + Objects.hashCode(this.commputerAttack);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Attacks other = (Attacks) obj;
+        if (!Objects.equals(this.attack, other.attack)) {
+            return false;
+        }
+        if (this.computerChoice != other.computerChoice) {
+            return false;
+        }
+        if (!Objects.equals(this.commputerAttack, other.commputerAttack)) {
+            return false;
+        }
+        return true;
+    }
+    
 }

@@ -4,6 +4,7 @@
  */
 package rpsls;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 /**
@@ -142,5 +143,37 @@ public class MainMenuView {
     private void setMainMenuControl(MainMenuControl mainMenuControl) {
         this.mainMenuControl = mainMenuControl;
     }
+
+    @Override
+    public String toString() {
+        return "MainMenuView{" + "action=" + action + ", mainMenuControl=" + mainMenuControl + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.action);
+        hash = 79 * hash + Objects.hashCode(this.mainMenuControl);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MainMenuView other = (MainMenuView) obj;
+        if (!Objects.equals(this.action, other.action)) {
+            return false;
+        }
+        if (!Objects.equals(this.mainMenuControl, other.mainMenuControl)) {
+            return false;
+        }
+        return true;
+    }
+    
   
 }

@@ -4,6 +4,7 @@
  */
 package rpsls;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 /**
@@ -153,6 +154,37 @@ public class HelpMenuView {
      */
     private void setHelpMenuControl(HelpMenuControl helpMenuControl) {
         this.helpMenuControl = helpMenuControl;
+    }
+
+    @Override
+    public String toString() {
+        return "HelpMenuView{" + "action=" + action + ", helpMenuControl=" + helpMenuControl + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 89 * hash + Objects.hashCode(this.action);
+        hash = 89 * hash + Objects.hashCode(this.helpMenuControl);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final HelpMenuView other = (HelpMenuView) obj;
+        if (!Objects.equals(this.action, other.action)) {
+            return false;
+        }
+        if (!Objects.equals(this.helpMenuControl, other.helpMenuControl)) {
+            return false;
+        }
+        return true;
     }
   
 }

@@ -86,4 +86,10 @@ public class HelpMenuControl {
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
+
+    @Override
+    public String toString() {
+        return "HelpMenuControl{" + '}';
+    }
+     
 }
