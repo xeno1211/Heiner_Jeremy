@@ -11,10 +11,11 @@ import java.util.Scanner;
  *
  * @author Jeremy
  */
+
 public class HelpMenuView extends Menu {
     
    
-     public static String[][] menuItems = {
+     public static final String[][] menuItems = {
         {"G", "The game"},
         {"C", "A computer player"}, 
         {"A", "Attacks"},
@@ -32,7 +33,8 @@ public class HelpMenuView extends Menu {
     } 
     
     // display the help menu and get the end users input selection
-    public String getHelpInput() {       
+    @Override
+     public String getInput() {        
         
        
         do {           

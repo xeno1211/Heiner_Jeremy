@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class MainMenuView extends Menu {
     
-     public static String[][] menuItems = {
+     public static final String[][] menuItems = {
         {"N", "New game"},
         {"H", "Help!"}, 
         {"Q", "Quit"}        
@@ -34,7 +34,8 @@ public class MainMenuView extends Menu {
     
     
     // display the help menu and get the end users input selection
-    public String getMainMenuItem() {        
+    @Override
+     public String getInput() {        
         
        
         do {

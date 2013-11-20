@@ -27,6 +27,9 @@ public abstract class Menu {
     public String[][] getMenuItems() {
         return menuItems;
     }
+    
+    public abstract String getInput(); 
+    
 
     public void setMenuItems(String[][] menuItems) {
         this.menuItems = menuItems;

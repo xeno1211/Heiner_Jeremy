@@ -147,7 +147,7 @@ public MainMenuControl() {
     }
     public void getHelp() {
         HelpMenuView hMenu = new HelpMenuView();        
-        hMenu.getHelpInput();
+        hMenu.getInput();
         
        
     }    
