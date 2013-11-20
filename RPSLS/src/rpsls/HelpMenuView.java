@@ -11,34 +11,22 @@ import java.util.Scanner;
  *
  * @author Jeremy
  */
-public class HelpMenuView {
+public class HelpMenuView extends Menu {
     
    
-     public static String[][] helpMenu = {
+     public static String[][] menuItems = {
         {"G", "The game"},
         {"C", "A computer player"}, 
         {"A", "Attacks"},
         {"Q", "Quit Help"}        
     };
 
-    /**
-     * @return the helpMenu
-     */
-    private static String[][] getHelpMenu() {
-        return helpMenu;
-    }
+  String action;
 
-    /**
-     * @param aHelpMenu the helpMenu to set
-     */
-    private static void setHelpMenu(String[][] aHelpMenu) {
-        helpMenu = aHelpMenu;
-    }
-     public String action;
-     // Create instance of the HelpMenuControl (action) class
-     public HelpMenuControl helpMenuControl = new HelpMenuControl();
+   
     
     public HelpMenuView() {
+       super(HelpMenuView.menuItems);
 //        
         
     } 
@@ -56,135 +44,95 @@ public class HelpMenuView {
            
             switch (command) {
                 case "G":
-                    this.getHelpMenuControl().displayGameHelp();
+                    displayGameHelp();
                     break;
                 case "C":
-                    this.getHelpMenuControl().displayComputerHelp();
+                    displayComputerHelp();
                     break;
                 case "A":
-                    this.getHelpMenuControl().displayAttacksHelp();
+                    displayAttacksHelp();
                     break;                  
                 case "Q": 
-                     setAction("QUIT");
-                    return getAction();
+                     action = "QUIT";
+                    return action;
             }
-        } while (getAction() != "QUIT");  
+        } while (action != "QUIT");  
         
-         return getAction();
+         return action;
     }
+    public void displayGameHelp() {
+        System.out.println();                
+        System.out.println( 
+                "\t\"It’s very simple. Look, scissors cuts paper. Paper covers rock. "
+                + "\n\tRock crushes lizard. Lizard poisons Spock. Spock smashes scissors. "
+                + "\n\tScissors decapitates lizard. Lizard eats paper. Paper disproves Spock. "
+                + "\n\tSpock vaporizes rock. And as it always has, rock crushes scissors.\"");
+        displayHelpBoarder();
+       
+    }
+    public void displayComputerHelp() {
+        System.out.println();                
+        System.out.println( 
+                "\tThe computer uses a random number generator to choose its attack.");
+        displayHelpBoarder();
+       
+    }    
+   public String[] displayAttacksHelp() {
+        System.out.println("Unsorted list: "); 
+        System.out.println();                
+        System.out.println( 
+                "\tRock = 1 "
+                + "\n\tPaper = 2 "
+                + "\n\tScissors = 3 "
+                + "\n\tSpock = 4 "
+                + "\n\tLizard = 5");
+        System.out.println("Sorted list: ");
+       String[ ] attacks = {"Rock = 1", "Paper = 2", "Scissors = 3", "Spock = 4", "Lizard = 5"};
+       sortStringBubble(attacks);
+        for ( int k = 0;  k < 5;  k++ )
+                System.out.println("\t" + attacks [ k ] );
+        testSort(attacks);
+        return attacks;
+       
+    }
+    public static void sortStringBubble( String  attacks [ ] )
+      {
+            int j;
+            boolean flag = true;  // will determine when the sort is finished
+            String temp;
 
-        // displays the help menu
-    public final void display() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\tEnter the letter associated with one of the following commands:");
-
-        for (int i = 0; i < HelpMenuView.getHelpMenu().length; i++) {
-            System.out.println("\t   " + getHelpMenu()[i][0] + "\t" + getHelpMenu()[i][1]);
+            while ( flag )
+            {
+                  flag = false;
+                  for ( j = 0;  j < attacks.length - 1;  j++ )
+                  {
+                          if ( attacks [ j ].compareToIgnoreCase( attacks [ j+1 ] ) > 0 )
+                          {                                             // ascending sort
+                                      temp = attacks [ j ];
+                                      attacks [ j ] = attacks [ j+1];     // swapping
+                                      attacks [ j+1] = temp; 
+                                      flag = true;
+                           } 
+                   } 
+            } 
+      }
+    public static void testSort(String attacks []){
+        System.out.println(attacks[0]);
+        if ("Lizard = 5".equals(attacks[0]) && "Paper = 2".equals(attacks[1]) && "Rock = 1".equals(attacks[2]) 
+                && "Scissors = 3".equals(attacks[3]) && "Spock = 4".equals(attacks[4])){
+            System.out.println("It worked.");
         }
-        /*
-        for (int g = 0; g<score[2]; g++){
-                gamesPlayed[g] = helpMenu.gamesPlayed();
-                System.out.println("you have played" + gamesPlayed[g] + "games, so far.");
+        else{
+             System.out.println("It didn't work.");
         }
-*/
-        System.out.println("\t===============================================================\n");
     }
-
-    
-    
-    // retrieves the command entered by the end user
-    protected final String getCommand() {
-
-//        Scanner inFile = myGame.getInputFile();
-        Scanner input = new Scanner(System.in);
-        String command;
-        boolean valid = false;
-        do {
-
-            command = input.next();
-            command = command.trim().toUpperCase();
-            valid = validCommand(command);
-            if (!validCommand(command)) {
-//                new TicTacToeError().displayError("Invalid command. Please enter a valid command.");
-                System.out.println("Invalid command. Please enter a valid command.");
-                continue;
-            }
-                
-        } while (!valid);
-        
-        return command;
+     private void displayHelpBoarder() {       
+        System.out.println(
+        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
-    
-    
-    // determines if the command is valid
-    private boolean validCommand(String command) {
-        String[][] items = HelpMenuView.getHelpMenu();
+     
+     
 
-        for (String[] item : HelpMenuView.getHelpMenu()) {
-            if (item[0].equals(command)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * @return the action
-     */
-    private String getAction() {
-        return action;
-    }
-
-    /**
-     * @return the helpMenuControl
-     */
-    private HelpMenuControl getHelpMenuControl() {
-        return helpMenuControl;
-    }
-
-    /**
-     * @param action the action to set
-     */
-    private void setAction(String action) {
-        this.action = action;
-    }
-
-    /**
-     * @param helpMenuControl the helpMenuControl to set
-     */
-    private void setHelpMenuControl(HelpMenuControl helpMenuControl) {
-        this.helpMenuControl = helpMenuControl;
-    }
-
-    @Override
-    public String toString() {
-        return "HelpMenuView{" + "action=" + action + ", helpMenuControl=" + helpMenuControl + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 89 * hash + Objects.hashCode(this.action);
-        hash = 89 * hash + Objects.hashCode(this.helpMenuControl);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final HelpMenuView other = (HelpMenuView) obj;
-        if (!Objects.equals(this.action, other.action)) {
-            return false;
-        }
-        if (!Objects.equals(this.helpMenuControl, other.helpMenuControl)) {
-            return false;
-        }
-        return true;
-    }
+       
   
 }

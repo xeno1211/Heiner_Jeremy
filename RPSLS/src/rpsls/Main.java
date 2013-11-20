@@ -23,7 +23,7 @@ public class Main {
         newPlayer.getName(); 
          
         MainMenuView menu = new MainMenuView();        
-        menu.getInput();   
+        menu.getMainMenuItem();   
           
         
        
