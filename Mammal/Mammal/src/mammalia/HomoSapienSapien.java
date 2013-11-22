@@ -10,21 +10,21 @@ package mammalia;
  *
  * @author Xenocyde
  */
-public class HomoSapienSapien extends Mammalia {
-    
-   public HomoSapienSapien(String name,String species, boolean isCaveMan, boolean isExtinct, boolean hasBigBrain, boolean isWarmBlooded,
+public class HomoSapienSapien extends Mamalia {
+     public HomoSapienSapien(String name, String species, boolean isCaveMan, boolean isExtinct, boolean hasBigBrain, boolean isWarmBlooded,
             boolean hasHair, boolean hasLiveBirth) {
-        Mammalia human = new Mammalia();
-         human.setName(name);
-         human.setSpecies(species);
-         human.setIsCaveMan(isCaveMan);  
-         human.setIsExtinct(isExtinct);  
-         human.setHasBigBrain(hasBigBrain);  
-         human.setIsWarmBlooded(isWarmBlooded);  
-         human.setHasHair(hasHair);  
-         human.setHasLiveBirth(hasLiveBirth);  
-         
-         human.output();
-   }
+        
+         super(name, species, isCaveMan, isExtinct, hasBigBrain, isWarmBlooded, hasHair, hasLiveBirth);
+        
+        
+        
+    }
+    
+    @Override
+    public void output(){
+         System.out.print(this.toString());
+    }
+  
+   
     
 }
