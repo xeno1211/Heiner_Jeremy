@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package rpsls;
+package rpsls.views;
 import java.util.Scanner;
 
 

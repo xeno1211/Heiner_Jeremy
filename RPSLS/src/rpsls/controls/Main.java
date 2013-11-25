@@ -3,9 +3,11 @@
  * and open the template in the editor.
  * Luke Brewer and Jeremy!
  */
-package rpsls;
+package rpsls.controls;
 
 import java.util.Scanner;
+import rpsls.views.MainMenuView;
+import rpsls.models.Player;
 
 /**
  *

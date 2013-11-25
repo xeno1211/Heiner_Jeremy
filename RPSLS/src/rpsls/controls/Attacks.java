@@ -3,7 +3,7 @@
  * and open the template in the editor.
  * Luke Brewer and Jeremy
  */
-package rpsls;
+package rpsls.controls;
 
 import java.util.Objects;
 import java.util.Scanner;

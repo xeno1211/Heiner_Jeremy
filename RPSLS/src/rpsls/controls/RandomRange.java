@@ -1,3 +1,5 @@
+package rpsls.controls;
+
 
 import java.util.Random;
 // Luke Brewer and Jeremy

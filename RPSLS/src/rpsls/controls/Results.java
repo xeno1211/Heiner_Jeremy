@@ -1,5 +1,5 @@
 // Luke Brewer and Jeremy
-package rpsls;
+package rpsls.controls;
 
 public class Results{
     public void displayTextResult(int playerAttack,int computerAttack){
