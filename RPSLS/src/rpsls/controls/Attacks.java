@@ -8,6 +8,7 @@ package rpsls.controls;
 import java.util.Objects;
 import java.util.Scanner;
 import java.util.Random;
+import rpsls.enums.AttackType;
 
 /**
  *

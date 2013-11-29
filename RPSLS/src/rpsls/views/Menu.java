@@ -6,6 +6,8 @@
 
 package rpsls.views;
 import java.util.Scanner;
+import rpsls.interfaces.DisplayInfo;
+import rpsls.interfaces.EnterInfo;
 
 
 /**
@@ -13,7 +15,7 @@ import java.util.Scanner;
  * @author Xenocyde
  */
 
-public abstract class Menu {
+public abstract class Menu implements EnterInfo, DisplayInfo  {
 
     private String[][] menuItems = null;
     
@@ -28,7 +30,7 @@ public abstract class Menu {
         return menuItems;
     }
     
-    public abstract String getInput(); 
+   
     
 
     public void setMenuItems(String[][] menuItems) {
