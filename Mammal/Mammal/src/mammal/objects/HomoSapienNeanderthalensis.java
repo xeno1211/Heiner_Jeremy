@@ -4,13 +4,16 @@
  * and open the template in the editor.
  */
 
-package mammalia;
+package mammal.objects;
+
+import mammal.control.Mamalia;
+import mammal.interfaces.Output;
 
 /**
  *
  * @author Xenocyde
  */
-public class HomoSapienNeanderthalensis extends Mamalia {
+public class HomoSapienNeanderthalensis extends Mamalia implements Output {
 
     public HomoSapienNeanderthalensis(String name, String species, boolean isCaveMan, boolean isExtinct, boolean hasBigBrain, boolean isWarmBlooded,
             boolean hasHair, boolean hasLiveBirth) {
@@ -21,8 +24,10 @@ public class HomoSapienNeanderthalensis extends Mamalia {
         
     }
     
+   
+
     @Override
-    public void output(){
+    public void display() {
         System.out.print(this.toString());
     }
     

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package mammalia;
+package mammal.control;
 
 /**
  *
@@ -100,7 +100,7 @@ public abstract class Mamalia {
     }
     
     
-    public abstract void output();  
+  
 
     @Override
     public String toString() {

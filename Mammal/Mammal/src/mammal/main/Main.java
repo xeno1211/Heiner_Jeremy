@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 
-package mammalia;
+package mammal.main;
 
 import java.util.Objects;
+import mammal.objects.HomoSapienNeanderthalensis;
+import mammal.objects.HomoSapienSapien;
 
 /**
  *
@@ -21,8 +23,8 @@ public abstract class Main {
     public static void main(String[] args) {
         HomoSapienNeanderthalensis fred = new HomoSapienNeanderthalensis("Fred Flintstone", "Homo Sapien Neanderthalensis (Neanderthal)", true, true, false, true, true, true);
         HomoSapienSapien jeremy = new HomoSapienSapien("Jeremy Heiner", "Homo Sapien Sapien (Human)", false, false, true, true, true, true);
-        fred.output();
-        jeremy.output();
+        fred.display();
+        jeremy.display();
         
     }
     

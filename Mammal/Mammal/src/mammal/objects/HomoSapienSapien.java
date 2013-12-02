@@ -1,4 +1,7 @@
-package mammalia;
+package mammal.objects;
+
+import mammal.control.Mamalia;
+import mammal.interfaces.Output;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -10,7 +13,7 @@ package mammalia;
  *
  * @author Xenocyde
  */
-public class HomoSapienSapien extends Mamalia {
+public class HomoSapienSapien extends Mamalia implements Output {
      public HomoSapienSapien(String name, String species, boolean isCaveMan, boolean isExtinct, boolean hasBigBrain, boolean isWarmBlooded,
             boolean hasHair, boolean hasLiveBirth) {
         
@@ -20,9 +23,9 @@ public class HomoSapienSapien extends Mamalia {
         
     }
     
-    @Override
-    public void output(){
-         System.out.print(this.toString());
+     @Override
+    public void display() {
+        System.out.print(this.toString());
     }
   
    
