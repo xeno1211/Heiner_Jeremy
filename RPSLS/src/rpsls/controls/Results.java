@@ -1,8 +1,11 @@
 // Luke Brewer and Jeremy
 package rpsls.controls;
 
-public class Results{
-    public void displayTextResult(int playerAttack,int computerAttack){
+import rpsls.interfaces.DisplayInfo;
+
+public  class Results implements DisplayInfo{
+    @Override
+    public void display(int playerAttack,int computerAttack){
         
 // normal play
         if ((playerAttack == 1 && computerAttack==2)||(playerAttack==2 && computerAttack==1))
@@ -209,6 +212,7 @@ public class Results{
     public String toString() {
         return "Results{" + '}';
     }
+
     
 
 }

@@ -35,7 +35,7 @@ public class MainMenuView extends Menu {
     
     
     // display the help menu and get the end users input selection
-    @Override
+    
      public String getInput() {        
         
        
@@ -60,6 +60,11 @@ public class MainMenuView extends Menu {
         } while (action != "QUIT");  
         
          return action;
+    }
+
+    @Override
+    public void display(int playerAttack, int computerAttack) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
       

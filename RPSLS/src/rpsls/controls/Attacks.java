@@ -70,7 +70,7 @@ public class Attacks {
                    }
                    System.out.println("\nYour attack is " + getAttackType() + ". and your enemy has chosen "+ getCommputerAttack() +".");
                    Results getResults = new Results();        
-                   getResults.displayTextResult(Integer.parseInt(this.attack), getComputerChoice());
+                   getResults.display(Integer.parseInt(this.attack), getComputerChoice());
                    winner = getResults.getResults(Integer.parseInt(this.attack), getComputerChoice());
 
                } 
@@ -84,7 +84,7 @@ public class Attacks {
             System.out.println("Illegal selection. Please type a number 1-5." );
              getAttack();  
              Results getResults = new Results();        
-             getResults.displayTextResult(Integer.parseInt(this.attack), getComputerChoice());
+             getResults.display(Integer.parseInt(this.attack), getComputerChoice());
              winner = getResults.getResults(Integer.parseInt(this.attack), getComputerChoice());
             
            

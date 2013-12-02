@@ -11,6 +11,6 @@ package rpsls.interfaces;
  * @author Xenocyde
  */
 public interface DisplayInfo {
-    void display();
+    void display(int playerAttack,int computerAttack);
     
 }
