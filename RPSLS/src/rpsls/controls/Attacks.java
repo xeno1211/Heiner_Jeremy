@@ -25,7 +25,7 @@ public class Attacks {
         
         int start = 1;
         int end = 5;
-        char winner = 'L';
+        char winner = '-';
         Random random = new Random();
         long range = (long)end - (long)start + 1;
         long fraction = (long)(range * random.nextDouble());
@@ -76,19 +76,22 @@ public class Attacks {
                    
 
                } 
-               else{
+            // Invalid NUMBER selected   
+            else{
                    System.out.println("Illegal attack. Please try again.");
                    
                }  
         }
+        // If player picks a letter or special character
         else{
              // does not contain a number        
             
             System.out.println("Illegal selection. Please type a number 1-5." );
-             getAttack();  
-             Results getResults = new Results();        
-             getResults.display(Integer.parseInt(this.attack), getComputerChoice());
-             winner = getResults.getResults(Integer.parseInt(this.attack), getComputerChoice());
+            
+//             getAttack();  
+//             Results getResults = new Results();        
+//             getResults.display(Integer.parseInt(this.attack), getComputerChoice());
+//             winner = getResults.getResults(Integer.parseInt(this.attack), getComputerChoice());
             
            
         }
@@ -144,40 +147,6 @@ public class Attacks {
         this.commputerAttack = commputerAttack;
     }
 
-    @Override
-    public String toString() {
-        return "Attacks{" + "attack=" + attack + ", computerChoice=" + computerChoice + ", attackType=" + attackType + ", commputerAttack=" + commputerAttack + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.attack);
-        hash = 67 * hash + this.computerChoice;
-        hash = 67 * hash + Objects.hashCode(this.attackType);
-        hash = 67 * hash + Objects.hashCode(this.commputerAttack);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Attacks other = (Attacks) obj;
-        if (!Objects.equals(this.attack, other.attack)) {
-            return false;
-        }
-        if (this.computerChoice != other.computerChoice) {
-            return false;
-        }
-        if (!Objects.equals(this.commputerAttack, other.commputerAttack)) {
-            return false;
-        }
-        return true;
-    }
+   
     
 }

@@ -4,6 +4,7 @@
  */
 package rpsls.controls;
 
+import rpsls.exceptions.NumberException;
 import rpsls.views.HelpMenuView;
 
 /**
@@ -18,7 +19,7 @@ public MainMenuControl() {
         
     } 
 
-    public void newGame() {
+    public void newGame() throws NumberException {
         char score[] = {'-','-','-'};
         int playerScore = 0;
         int computerScore = 0;
@@ -140,6 +141,7 @@ public MainMenuControl() {
             
             
             }
+            
             
             
             
