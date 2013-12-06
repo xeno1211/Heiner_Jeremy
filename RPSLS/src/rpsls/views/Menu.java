@@ -6,6 +6,7 @@
 
 package rpsls.views;
 import java.util.Scanner;
+import rpsls.exceptions.MenuException;
 import rpsls.interfaces.DisplayInfo;
 import rpsls.interfaces.EnterInfo;
 
@@ -55,7 +56,7 @@ public abstract class Menu implements EnterInfo, DisplayInfo  {
         }
         return false;
     }
-     protected final String getCommand() {
+     protected final String getCommand() throws MenuException {
 
         Scanner input = new Scanner(System.in);
         String command;
@@ -65,8 +66,7 @@ public abstract class Menu implements EnterInfo, DisplayInfo  {
             command = command.trim().toUpperCase();
             valid = validCommand(command);
             if (!validCommand(command)) {
-                System.out.println("Invalid command. Please enter a valid command.");
-                continue;
+                throw new MenuException("Invalid command. Please enter a valid command.");
             }
                 
         } while (!valid);

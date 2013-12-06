@@ -6,6 +6,7 @@
 package rpsls.controls;
 
 import java.util.Scanner;
+import rpsls.exceptions.MenuException;
 import rpsls.views.MainMenuView;
 import rpsls.models.Player;
 
@@ -25,12 +26,23 @@ public class Main {
         newPlayer.getName(); 
          
         MainMenuView menu = new MainMenuView();        
-        menu.getInput();   
-          
+//         try {
+            menu.getInput();
+//        } catch (MenuException mx) {
+//            System.out.println(mx.getMessage());
+//        }
+//         
+//        finally{
+//        Main.inFile.close();    
+//        }
         
        
         
     }
+    
+//    public static Scanner getInputFile() {
+//        return Main.inFile;
+//    }
 
     @Override
     public String toString() {

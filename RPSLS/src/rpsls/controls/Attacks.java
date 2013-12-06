@@ -72,6 +72,7 @@ public class Attacks {
                    Results getResults = new Results();        
                    getResults.display(Integer.parseInt(this.attack), getComputerChoice());
                    winner = getResults.getResults(Integer.parseInt(this.attack), getComputerChoice());
+                   
 
                } 
                else{

@@ -7,6 +7,9 @@ package rpsls.views;
 import rpsls.controls.MainMenuControl;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import rpsls.exceptions.MenuException;
 
 /**
  *
@@ -40,22 +43,26 @@ public class MainMenuView extends Menu {
         
        
         do {
-            this.display();
-            
-            // get commaned entered
-            String command = this.getCommand();
-            switch (command) {
-                case "N":
+            try {
+                this.display();
+                
+                // get commaned entered
+                String command = this.getCommand();
+                switch (command) {
+                    case "N":
                         mainMenuControl.newGame();
-                    break;
-                case "H":
+                        break;
+                    case "H":
 //                    System.out.println("");
-                      mainMenuControl.getHelp();
-                    break;                        
-                case "Q": 
-                     action = "QUIT";
-                     System.out.println("Goodbye!");
-                    return action;
+                        mainMenuControl.getHelp();
+                        break;
+                    case "Q":
+                        action = "QUIT";
+                        System.out.println("Goodbye!");
+                        return action;
+                }
+            } catch (MenuException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
             }
         } while (action != "QUIT");  
         

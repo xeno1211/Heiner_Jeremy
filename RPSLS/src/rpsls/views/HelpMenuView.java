@@ -6,6 +6,9 @@ package rpsls.views;
 
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import rpsls.exceptions.MenuException;
 
 /**
  *
@@ -38,25 +41,29 @@ public class HelpMenuView extends Menu  {
         
        
         do {           
-            this.display();      
-            
-            // get commaned entered
-            
-            String command = this.getCommand();
-           
-            switch (command) {
-                case "G":
-                    displayGameHelp();
-                    break;
-                case "C":
-                    displayComputerHelp();
-                    break;
-                case "A":
-                    displayAttacksHelp();
-                    break;                  
-                case "Q": 
-                     action = "QUIT";
-                    return action;
+            try {
+                this.display();
+                
+                // get commaned entered
+                
+                String command = this.getCommand();
+                
+                switch (command) {
+                    case "G":
+                        displayGameHelp();
+                        break;
+                    case "C":
+                        displayComputerHelp();
+                        break;
+                    case "A":
+                        displayAttacksHelp();
+                        break;
+                    case "Q":
+                        action = "QUIT";
+                        return action;
+                }
+            } catch (MenuException ex) {
+                Logger.getLogger(HelpMenuView.class.getName()).log(Level.SEVERE, null, ex);
             }
         } while (action != "QUIT");  
         
