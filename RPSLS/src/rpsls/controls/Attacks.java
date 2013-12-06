@@ -9,6 +9,7 @@ import java.util.Objects;
 import java.util.Scanner;
 import java.util.Random;
 import rpsls.enums.AttackType;
+import rpsls.exceptions.NumberException;
 
 /**
  *
@@ -20,7 +21,7 @@ public class Attacks {
     private String attackType;
     private String commputerAttack;
     
-    public char getAttack() {
+    public char getAttack() throws NumberException {
         
         int start = 1;
         int end = 5;
@@ -82,6 +83,7 @@ public class Attacks {
         }
         else{
              // does not contain a number        
+            
             System.out.println("Illegal selection. Please type a number 1-5." );
              getAttack();  
              Results getResults = new Results();        

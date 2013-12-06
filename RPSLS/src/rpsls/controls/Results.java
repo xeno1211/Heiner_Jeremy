@@ -1,6 +1,7 @@
 // Luke Brewer and Jeremy
 package rpsls.controls;
 
+import rpsls.exceptions.NumberException;
 import rpsls.interfaces.DisplayInfo;
 
 public  class Results implements DisplayInfo{
@@ -64,7 +65,7 @@ public  class Results implements DisplayInfo{
 // contingencies
     
     
-    public char getResults(int playerAttack,int computerAttack){
+    public char getResults(int playerAttack,int computerAttack) throws NumberException{
         
         for (int i = 0; i<3; i++){
         
@@ -200,19 +201,15 @@ public  class Results implements DisplayInfo{
             }
             else {
                 System.out.println("You chose an illegal attack, you automatically LOSE");
-                return 'L';  
+                 throw new NumberException("Error! Invalid attack choice!");
                 }
             
 
         }
-        return 'L';
+       throw new NumberException("Error! Invalid attack choice!");
     }
 
-    @Override
-    public String toString() {
-        return "Results{" + '}';
-    }
-
+    
     
 
 }
