@@ -10,6 +10,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import rpsls.exceptions.MenuException;
+import rpsls.exceptions.NumberException;
 
 /**
  *
@@ -62,6 +63,8 @@ public class MainMenuView extends Menu {
                         return action;
                 }
             } catch (MenuException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (NumberException ex) {
                 Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
             }
         } while (action != "QUIT");  
