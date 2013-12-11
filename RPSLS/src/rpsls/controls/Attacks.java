@@ -62,7 +62,7 @@ public class Attacks {
                     
                 } //the try closer
                 catch (NumberException | NumberFormatException ex) {
-                    Logger.getLogger(Attacks.class.getName()).log(Level.SEVERE, null, ex);
+                    // Logger.getLogger(Attacks.class.getName()).log(Level.SEVERE, null, ex);
                     System.out.println("Illegal attack. Please try again.");
 
                 }
