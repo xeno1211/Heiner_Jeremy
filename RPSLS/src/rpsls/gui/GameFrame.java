@@ -71,7 +71,7 @@ public class GameFrame extends javax.swing.JFrame {
         buttonSpock.setText("Spock");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        jLabel1.setText("Welcom to RPSLS");
+        jLabel1.setText("New Game");
 
         jLabel2.setText("Be sure to choose the right weapon, less the nifarious Dr. Robo");
 
@@ -127,7 +127,7 @@ public class GameFrame extends javax.swing.JFrame {
                     .addComponent(buttonSpock))
                 .addGap(2, 2, 2)
                 .addComponent(lableResults, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
                 .addComponent(backButton)
                 .addContainerGap())
         );

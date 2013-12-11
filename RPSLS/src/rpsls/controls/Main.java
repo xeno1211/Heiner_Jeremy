@@ -7,6 +7,7 @@ package rpsls.controls;
 
 import java.util.Scanner;
 import rpsls.exceptions.MenuException;
+import rpsls.gui.PlayerNameFrame;
 import rpsls.views.MainMenuView;
 import rpsls.models.Player;
 
@@ -21,22 +22,22 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {        
-        Main myGame = new Main();
-        Player newPlayer = new Player();
-        newPlayer.getName(); 
-         
-        MainMenuView menu = new MainMenuView();        
-//         try {
-            menu.getInput();
-//        } catch (MenuException mx) {
-//            System.out.println(mx.getMessage());
-//        }
-//         
-//        finally{
-//        Main.inFile.close();    
-//        }
         
-       
+        PlayerNameFrame playerFrame = new PlayerNameFrame();
+        playerFrame.setVisible(true);
+         
+//        MainMenuView menu = new MainMenuView();        
+////         try {
+//            menu.getInput();
+////        } catch (MenuException mx) {
+////            System.out.println(mx.getMessage());
+////        }
+////         
+////        finally{
+////        Main.inFile.close();    
+////        }
+//        
+//       
         
     }
     
