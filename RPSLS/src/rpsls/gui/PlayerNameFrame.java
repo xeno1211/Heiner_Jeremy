@@ -6,6 +6,9 @@
 
 package rpsls.gui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 import rpsls.models.Player;
 
 /**
@@ -93,11 +96,76 @@ public class PlayerNameFrame extends javax.swing.JFrame {
 
     private void continueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueButtonActionPerformed
         Player newPlayer = new Player();
-        newPlayer.getName();
+        String player;
+        String name = this.nameTextField.getText();
+        newPlayer.setName(name);
         MainMenuFrame mainMenuFrame = new MainMenuFrame();
-        mainMenuFrame.setVisible(true);
+        mainMenuFrame.setPlayer(newPlayer);
+//        mainMenuFrame.getWelcomeLabel().setText("\nWelcome " + name + "!\n");
+        // Easter eggs
+        if("Sheldon".equals(name)){
+            mainMenuFrame.getWelcomeLabel().setText("Welcome, Dr. Cooper. Your brillance is going to make this game great!\n Unless of course Wil Wheaton is playing. Then you're doomed!");
+        }
+        else if("Raj".equals(name)){
+            mainMenuFrame.getWelcomeLabel().setText("Welcome, Dr. Koothrappali. I hope you are drunk.\n There might be a girl here.");
+        }
+        else if("Howard".equals(name)){
+            mainMenuFrame.getWelcomeLabel().setText("Welcome, MISTER Wolowitz. Go get your doctorate, you bum!\n Also, stop fantazing about Kara Thrace and George Takei!");
+        }
+        else if("Leonard".equals(name)){
+            mainMenuFrame.getWelcomeLabel().setText("Welcome, Dr. Hofstadter.\n How's the roommate agreement treating you? Treat Penny well. You don't deserve her.");
+        }
+        else if("Penny".equals(name)){
+            mainMenuFrame.getWelcomeLabel().setText("Welcome, Penny. Do you even have a last name? Stay with Leonard.\n He's better than your beefy boyfriends.");
+        }
+        else if("Amy".equals(name)){
+           mainMenuFrame.getWelcomeLabel().setText("Welcome, Dr. Folwer.\n How can you stand to be Sheldon's girlfriend. Are you insane?!"); 
+        }
+        else if("Bernadette".equals(name)){
+            mainMenuFrame.getWelcomeLabel().setText("Welcome, Dr. Rostenkowski-Wolowitz.\n Howard chose you over his hand and Kara Thrace. Don't you feel lucky?");
+        }
+        else if("Wil".equals(name)){
+            mainMenuFrame.getWelcomeLabel().setText("Welcome, Wil.\n You're going to own Sheldon Cooper at this game.");
+        }   
+        
+        else{
+            mainMenuFrame.getWelcomeLabel().setText("\nWelcome " + name + "!\n");
+        }
+        mainMenuFrame.setVisible(true);        
         this.dispose();
     }//GEN-LAST:event_continueButtonActionPerformed
+
+    public JButton getContinueButton() {
+        return continueButton;
+    }
+
+    public void setContinueButton(JButton continueButton) {
+        this.continueButton = continueButton;
+    }
+
+    public JLabel getNameLabel() {
+        return nameLabel;
+    }
+
+    public void setNameLabel(JLabel nameLabel) {
+        this.nameLabel = nameLabel;
+    }
+
+    public JLabel getNameText() {
+        return nameText;
+    }
+
+    public void setNameText(JLabel nameText) {
+        this.nameText = nameText;
+    }
+
+    public JTextField getNameTextField() {
+        return nameTextField;
+    }
+
+    public void setNameTextField(JTextField nameTextField) {
+        this.nameTextField = nameTextField;
+    }
 
     /**
      * @param args the command line arguments

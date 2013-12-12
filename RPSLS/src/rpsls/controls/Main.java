@@ -25,6 +25,7 @@ public class Main {
         
         PlayerNameFrame playerFrame = new PlayerNameFrame();
         playerFrame.setVisible(true);
+     
          
 //        MainMenuView menu = new MainMenuView();        
 ////         try {
