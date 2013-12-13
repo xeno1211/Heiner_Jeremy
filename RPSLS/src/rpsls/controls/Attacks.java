@@ -43,34 +43,34 @@ public class Attacks {
         this.setAttack(input.next());
         if (this.attack.matches("[0-9]")) {
 
-           
-                try {
-                    // contains a number
-                    int playerChoice = Integer.parseInt(this.attack);
-                    int computerChoice = getComputerChoice();
 
-                    String playerString = translateChoice(playerChoice);
-                    String computerString = translateChoice(computerChoice);
+            try {
+                // contains a number
+                int playerChoice = Integer.parseInt(this.attack);
+                int computerChoice = getComputerChoice();
 
-                    setAttackType(playerString);
-                    setCommputerAttack(computerString);
+                String playerString = translateChoice(playerChoice);
+                String computerString = translateChoice(computerChoice);
 
-                    System.out.println("\nYour attack is " + getAttackType() + ". and your enemy has chosen " + getCommputerAttack() + ".");
-                    Results getResults = new Results();
-                    getResults.display(Integer.parseInt(this.attack), getComputerChoice());
-                    winner = getResults.getResults(Integer.parseInt(this.attack), getComputerChoice());
-                    
-                } //the try closer
-                catch (NumberException | NumberFormatException ex) {
-                   //Logger.getLogger(Attacks.class.getName()).log(Level.SEVERE, null, ex);
-                    System.out.println("Illegal attack. Please try again.");
+                setAttackType(playerString);
+                setCommputerAttack(computerString);
 
-                }
+                attackText = ("\nYour attack is " + getAttackType() + ". and your enemy has chosen " + getCommputerAttack() + ".");
+                Results getResults = new Results();
+                getResults.display(Integer.parseInt(this.attack), getComputerChoice());
+                winner = getResults.getResults(Integer.parseInt(this.attack), getComputerChoice());
+
+            } //the try closer
+            catch (NumberException | NumberFormatException ex) {
+                //Logger.getLogger(Attacks.class.getName()).log(Level.SEVERE, null, ex);
+                attackText = ("Illegal attack. Please try again.");
+
+            }
             //the do closer
-           
+
 
             // while (Integer.parseInt(this.attack)!=1 || Integer.parseInt(this.attack)!=2 || Integer.parseInt(this.attack)!=3 ||Integer.parseInt(this.attack)!=4 ||Integer.parseInt(this.attack)!=5);
-           
+
 
             //#######################################################################################       
         }//what your attack is closer 
@@ -78,7 +78,7 @@ public class Attacks {
         else {
             // does not contain a number        
 
-            System.out.println("Illegal selection. Please type a number 1-5.");
+            attackText = ("Illegal selection. Please type a number 1-5.");
 
 //             getAttack();  
 //             Results getResults = new Results();        
@@ -153,4 +153,5 @@ public class Attacks {
         }
         throw new NumberException();
     }
+    String attackText = "Attack Jazz";
 }
