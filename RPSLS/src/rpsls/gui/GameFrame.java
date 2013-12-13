@@ -57,14 +57,39 @@ public class GameFrame extends javax.swing.JFrame {
 
         buttonRock.setText("Rock");
         buttonRock.setToolTipText("");
+        buttonRock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRockActionPerformed(evt);
+            }
+        });
 
         buttonPaper.setText("Paper");
+        buttonPaper.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonPaperActionPerformed(evt);
+            }
+        });
 
         buttonScissors.setText("Scissors");
+        buttonScissors.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonScissorsActionPerformed(evt);
+            }
+        });
 
         buttonLizard.setText("Lizard");
+        buttonLizard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLizardActionPerformed(evt);
+            }
+        });
 
         buttonSpock.setText("Spock");
+        buttonSpock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSpockActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel1.setText("New Game");
@@ -123,12 +148,34 @@ public class GameFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
+          MainMenuFrame mainMenuFrame = new MainMenuFrame();
+        mainMenuFrame.setVisible(true);        
         this.dispose();
     }//GEN-LAST:event_backButtonMouseClicked
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_backButtonActionPerformed
+
+    private void buttonPaperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPaperActionPerformed
+        resultsTextArea.setText("Paper, " /*+  +scoreArray*/);
+    }//GEN-LAST:event_buttonPaperActionPerformed
+
+    private void buttonRockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRockActionPerformed
+        resultsTextArea.setText("Rock, ");
+    }//GEN-LAST:event_buttonRockActionPerformed
+
+    private void buttonScissorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonScissorsActionPerformed
+        resultsTextArea.setText("Scissors, ");
+    }//GEN-LAST:event_buttonScissorsActionPerformed
+
+    private void buttonLizardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLizardActionPerformed
+        resultsTextArea.setText("Lizard, ");
+    }//GEN-LAST:event_buttonLizardActionPerformed
+
+    private void buttonSpockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSpockActionPerformed
+        resultsTextArea.setText("Spock, ");
+    }//GEN-LAST:event_buttonSpockActionPerformed
 
     /**
      * @param args the command line arguments
