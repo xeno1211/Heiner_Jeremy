@@ -162,23 +162,23 @@ public class GameFrame extends javax.swing.JFrame {
 
     private void buttonPaperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPaperActionPerformed
        
-        resultsTextArea.setText("Paper, "+ attackText + resultsText);
+        resultsTextArea.setText("Paper, "+ attackText + "\n"+ resultsText);
     }//GEN-LAST:event_buttonPaperActionPerformed
 
     private void buttonRockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRockActionPerformed
-        resultsTextArea.setText("Rock, "+ attackText + resultsText);
+        resultsTextArea.setText("Rock, "+ attackText +"\n"+ resultsText);
     }//GEN-LAST:event_buttonRockActionPerformed
 
     private void buttonScissorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonScissorsActionPerformed
-        resultsTextArea.setText("Scissors, "+ attackText + resultsText);
+        resultsTextArea.setText("Scissors, "+ attackText +"\n"+ resultsText);
     }//GEN-LAST:event_buttonScissorsActionPerformed
 
     private void buttonLizardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLizardActionPerformed
-        resultsTextArea.setText("Lizard, "+ attackText + resultsText);
+        resultsTextArea.setText("Lizard, "+ attackText +"\n"+ resultsText);
     }//GEN-LAST:event_buttonLizardActionPerformed
 
     private void buttonSpockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSpockActionPerformed
-        resultsTextArea.setText("Spock, "+ attackText + resultsText);
+        resultsTextArea.setText("Spock, "+ attackText +"\n"+ resultsText);
     }//GEN-LAST:event_buttonSpockActionPerformed
                       
                                  
