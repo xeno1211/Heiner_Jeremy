@@ -19,6 +19,9 @@ public class GameFrame extends javax.swing.JFrame {
         initComponents();
     }
 
+    
+     String attackText;
+     String resultsText;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -158,25 +161,27 @@ public class GameFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void buttonPaperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPaperActionPerformed
-        resultsTextArea.setText("Paper, " /*+  +scoreArray*/);
+       
+        resultsTextArea.setText("Paper, "+ attackText + resultsText);
     }//GEN-LAST:event_buttonPaperActionPerformed
 
     private void buttonRockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRockActionPerformed
-        resultsTextArea.setText("Rock, ");
+        resultsTextArea.setText("Rock, "+ attackText + resultsText);
     }//GEN-LAST:event_buttonRockActionPerformed
 
     private void buttonScissorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonScissorsActionPerformed
-        resultsTextArea.setText("Scissors, ");
+        resultsTextArea.setText("Scissors, "+ attackText + resultsText);
     }//GEN-LAST:event_buttonScissorsActionPerformed
 
     private void buttonLizardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLizardActionPerformed
-        resultsTextArea.setText("Lizard, ");
+        resultsTextArea.setText("Lizard, "+ attackText + resultsText);
     }//GEN-LAST:event_buttonLizardActionPerformed
 
     private void buttonSpockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSpockActionPerformed
-        resultsTextArea.setText("Spock, ");
+        resultsTextArea.setText("Spock, "+ attackText + resultsText);
     }//GEN-LAST:event_buttonSpockActionPerformed
-
+                      
+                                 
     /**
      * @param args the command line arguments
      */
