@@ -35,6 +35,8 @@ public class HelpMenuFrame extends javax.swing.JFrame {
         computerButton = new javax.swing.JButton();
         attacksButton = new javax.swing.JButton();
         quitButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        helpDisplay = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,6 +49,11 @@ public class HelpMenuFrame extends javax.swing.JFrame {
         jLabel4.setText("Welcome to Rock, Paper, Scissors, Lizard, Spock");
 
         rulesButton.setText("Rules of the Game");
+        rulesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rulesButtonActionPerformed(evt);
+            }
+        });
 
         computerButton.setText("Computer Player Info");
         computerButton.addActionListener(new java.awt.event.ActionListener() {
@@ -64,6 +71,14 @@ public class HelpMenuFrame extends javax.swing.JFrame {
             }
         });
 
+        helpDisplay.setEditable(false);
+        helpDisplay.setColumns(20);
+        helpDisplay.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        helpDisplay.setRows(5);
+        helpDisplay.setAlignmentX(0.0F);
+        helpDisplay.setAlignmentY(0.0F);
+        jScrollPane1.setViewportView(helpDisplay);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -73,33 +88,38 @@ public class HelpMenuFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(rulesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(computerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(attacksButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(quitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(256, 256, 256)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rulesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(computerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(attacksButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(quitButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(rulesButton)
-                .addGap(18, 18, 18)
-                .addComponent(computerButton)
-                .addGap(18, 18, 18)
-                .addComponent(attacksButton)
-                .addGap(18, 18, 18)
-                .addComponent(quitButton)
-                .addGap(62, 62, 62)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(rulesButton)
+                        .addGap(20, 20, 20)
+                        .addComponent(computerButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(attacksButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(quitButton))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(jLabel2))
         );
 
@@ -111,8 +131,18 @@ public class HelpMenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_computerButtonActionPerformed
 
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
-        // TODO add your handling code here:
+        MainMenuFrame mainMenuFrame = new MainMenuFrame();
+        mainMenuFrame.setVisible(true);        
+        this.dispose();
     }//GEN-LAST:event_quitButtonActionPerformed
+
+    private void rulesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rulesButtonActionPerformed
+        helpDisplay.setText(
+                "\t\"It’s very simple. Look, scissors cuts paper. Paper covers rock. "
+                + "\n\tRock crushes lizard. Lizard poisons Spock. Spock smashes scissors. "
+                + "\n\tScissors decapitates lizard. Lizard eats paper. Paper disproves Spock. "
+                + "\n\tSpock vaporizes rock. And as it always has, rock crushes scissors.\"");
+    }//GEN-LAST:event_rulesButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,9 +182,11 @@ public class HelpMenuFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton attacksButton;
     private javax.swing.JButton computerButton;
+    private javax.swing.JTextArea helpDisplay;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton quitButton;
     private javax.swing.JButton rulesButton;
     // End of variables declaration//GEN-END:variables

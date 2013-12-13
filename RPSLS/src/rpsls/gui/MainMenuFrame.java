@@ -69,8 +69,18 @@ public class MainMenuFrame extends javax.swing.JFrame {
         });
 
         helpButton.setText("Help!");
+        helpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                helpButtonActionPerformed(evt);
+            }
+        });
 
         quitButton.setText("Quit");
+        quitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitButtonActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel1.setText("Main Menu");
@@ -131,6 +141,16 @@ public class MainMenuFrame extends javax.swing.JFrame {
     private void newGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_newGameButtonActionPerformed
+
+    private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
+        HelpMenuFrame helpMenuFrame = new HelpMenuFrame();
+        helpMenuFrame.setVisible(true);        
+        this.dispose();
+    }//GEN-LAST:event_helpButtonActionPerformed
+
+    private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_quitButtonActionPerformed
 
   
 
