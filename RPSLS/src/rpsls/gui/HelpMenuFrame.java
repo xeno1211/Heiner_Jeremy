@@ -63,6 +63,11 @@ public class HelpMenuFrame extends javax.swing.JFrame {
         });
 
         attacksButton.setText("Attacks/Moves");
+        attacksButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                attacksButtonActionPerformed(evt);
+            }
+        });
 
         quitButton.setText("Back to Main Menu");
         quitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -77,6 +82,7 @@ public class HelpMenuFrame extends javax.swing.JFrame {
         helpDisplay.setRows(5);
         helpDisplay.setAlignmentX(0.0F);
         helpDisplay.setAlignmentY(0.0F);
+        helpDisplay.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jScrollPane1.setViewportView(helpDisplay);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -98,7 +104,7 @@ public class HelpMenuFrame extends javax.swing.JFrame {
                             .addComponent(attacksButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(quitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -127,7 +133,7 @@ public class HelpMenuFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void computerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_computerButtonActionPerformed
-        // TODO add your handling code here:
+       helpDisplay.setText("The computer uses a random number generator to choose its attack.");
     }//GEN-LAST:event_computerButtonActionPerformed
 
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
@@ -138,11 +144,20 @@ public class HelpMenuFrame extends javax.swing.JFrame {
 
     private void rulesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rulesButtonActionPerformed
         helpDisplay.setText(
-                "\t\"It’s very simple. Look, scissors cuts paper. Paper covers rock. "
-                + "\n\tRock crushes lizard. Lizard poisons Spock. Spock smashes scissors. "
-                + "\n\tScissors decapitates lizard. Lizard eats paper. Paper disproves Spock. "
-                + "\n\tSpock vaporizes rock. And as it always has, rock crushes scissors.\"");
+                "\"It’s very simple. Look, scissors cuts paper. Paper covers rock. "
+                + "\nRock crushes lizard. Lizard poisons Spock. Spock smashes scissors. "
+                + "\nScissors decapitates lizard. Lizard eats paper. Paper disproves Spock. "
+                + "\nSpock vaporizes rock. And as it always has, rock crushes scissors.\"");
     }//GEN-LAST:event_rulesButtonActionPerformed
+
+    private void attacksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attacksButtonActionPerformed
+       helpDisplay.setText(
+                "Rock = 1 "
+                + "\nPaper = 2 "
+                + "\nScissors = 3 "
+                + "\nSpock = 4 "
+                + "\nLizard = 5");
+    }//GEN-LAST:event_attacksButtonActionPerformed
 
     /**
      * @param args the command line arguments

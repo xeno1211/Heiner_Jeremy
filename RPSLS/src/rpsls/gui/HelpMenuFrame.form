@@ -40,7 +40,7 @@
                           <Component id="quitButton" alignment="0" min="-2" pref="226" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="507" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="616" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -115,6 +115,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Attacks/Moves"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="attacksButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="quitButton">
       <Properties>
@@ -141,6 +144,9 @@
             <Property name="rows" type="int" value="5"/>
             <Property name="alignmentX" type="float" value="0.0"/>
             <Property name="alignmentY" type="float" value="0.0"/>
+            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+              <Insets value="[0, 0, 0, 0]"/>
+            </Property>
           </Properties>
         </Component>
       </SubComponents>
