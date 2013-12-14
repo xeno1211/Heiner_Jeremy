@@ -73,7 +73,7 @@ public class MainMenuView extends Menu {
     }
 
     @Override
-    public void display(int playerAttack, int computerAttack) {
+    public void displayMatch(int playerAttack, int computerAttack) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

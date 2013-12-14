@@ -149,7 +149,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void newGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameButtonActionPerformed
-       GameFrame gameFrame =  new GameFrame();
+       GameFrame gameFrame =  new GameFrame(player);
        gameFrame.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_newGameButtonActionPerformed

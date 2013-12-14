@@ -5,23 +5,44 @@
 package rpsls.gui;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+import rpsls.enums.AttackType;
+import rpsls.models.*;
 
 /**
  *
  * @author Luke
  */
 public class GameFrame extends javax.swing.JFrame {
+    private String attackText;
+    private String resultsText;
+    
+    Set set;
+    Player player;
+    
+    //############################################################3
+    
+  
 
+    public JTextArea getresultsTextArea() {
+        return resultsTextArea;
+    }
+    //#########################################################3
+
+
+    
+    
     /**
      * Creates new form CalculatorForm
      */
-    public GameFrame() {
+    public GameFrame(Player player) {
         initComponents();
+        this.set = new Set();
+        this.player = player;
     }
 
     
-     String attackText;
-     String resultsText;
+     
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -151,7 +172,7 @@ public class GameFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
-          MainMenuFrame mainMenuFrame = new MainMenuFrame();
+        MainMenuFrame mainMenuFrame = new MainMenuFrame();
         mainMenuFrame.setVisible(true);        
         this.dispose();
     }//GEN-LAST:event_backButtonMouseClicked
@@ -161,24 +182,33 @@ public class GameFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void buttonPaperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPaperActionPerformed
+       //int playerChoice=2;
+       //getAttack()
+       //getAttack(this.attack); 
+        Attack playerAttack = new Attack(AttackType.PAPER, this.player);
+        Attack computerAttack = new Attack(AttackType.)
        
-        resultsTextArea.setText("Paper, "+ attackText + "\n"+ resultsText);
+       resultsTextArea.setText("Paper, \n"+ getAttackText() + "\n"+ getResultsText());
     }//GEN-LAST:event_buttonPaperActionPerformed
 
     private void buttonRockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRockActionPerformed
-        resultsTextArea.setText("Rock, "+ attackText +"\n"+ resultsText);
+        //playerChoice=1;
+        resultsTextArea.setText("Rock, \n"+ getAttackText() +"\n"+ getResultsText());
     }//GEN-LAST:event_buttonRockActionPerformed
 
     private void buttonScissorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonScissorsActionPerformed
-        resultsTextArea.setText("Scissors, "+ attackText +"\n"+ resultsText);
+        //playerChoice=3;
+        resultsTextArea.setText("Scissors, \n"+ getAttackText() +"\n"+ getResultsText());
     }//GEN-LAST:event_buttonScissorsActionPerformed
 
     private void buttonLizardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLizardActionPerformed
-        resultsTextArea.setText("Lizard, "+ attackText +"\n"+ resultsText);
+        //playerChoice=5;
+        resultsTextArea.setText("Lizard, \n"+ getAttackText() +"\n"+ getResultsText());
     }//GEN-LAST:event_buttonLizardActionPerformed
 
     private void buttonSpockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSpockActionPerformed
-        resultsTextArea.setText("Spock, "+ attackText +"\n"+ resultsText);
+        //playerChoice=4;
+        resultsTextArea.setText("Spock, \n"+ getAttackText() +"\n"+ getResultsText());
     }//GEN-LAST:event_buttonSpockActionPerformed
                       
                                  
@@ -206,7 +236,7 @@ public class GameFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GameFrame().setVisible(true);
+                //new GameFrame().setVisible(true);
             }
         });
     }
@@ -223,4 +253,32 @@ public class GameFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea resultsTextArea;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the attackText
+     */
+    public String getAttackText() {
+        return attackText;
+    }
+
+    /**
+     * @param attackText the attackText to set
+     */
+    public void setAttackText(String attackText) {
+        this.attackText = attackText;
+    }
+
+    /**
+     * @return the resultsText
+     */
+    public String getResultsText() {
+        return resultsText;
+    }
+
+    /**
+     * @param resultsText the resultsText to set
+     */
+    public void setResultsText(String resultsText) {
+        this.resultsText = resultsText;
+    }
 }

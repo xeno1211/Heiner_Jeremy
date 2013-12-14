@@ -14,6 +14,8 @@ import rpsls.enums.AttackType;
 import rpsls.exceptions.NumberException;
 import rpsls.views.HelpMenuView;
 
+import rpsls.gui.GameFrame;//getting the player attacks from here ###################################
+
 /**
  *
  * @author Jeremy
@@ -46,18 +48,18 @@ public class Attacks {
 
             try {
                 // contains a number
-                int playerChoice = Integer.parseInt(this.attack);
+//                int playerChoice = getPlayerChoice();//get the coice from GameFrame          // Old:    Integer.parseInt(this.attack);
                 int computerChoice = getComputerChoice();
 
-                String playerString = translateChoice(playerChoice);
+//                String playerString = translateChoice(playerChoice);
                 String computerString = translateChoice(computerChoice);
 
-                setAttackType(playerString);
+//                setAttackType(playerString);
                 setCommputerAttack(computerString);
 
                 attackText = ("\nYour attack is " + getAttackType() + ". and your enemy has chosen " + getCommputerAttack() + ".");
                 Results getResults = new Results();
-                getResults.display(Integer.parseInt(this.attack), getComputerChoice());
+                getResults.displayMatch(Integer.parseInt(this.attack), getComputerChoice());
                 winner = getResults.getResults(Integer.parseInt(this.attack), getComputerChoice());
 
             } //the try closer

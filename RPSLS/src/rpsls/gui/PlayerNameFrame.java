@@ -9,6 +9,7 @@ package rpsls.gui;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import rpsls.exceptions.InvalidNameException;
 import rpsls.models.Player;
 
 /**
@@ -98,6 +99,7 @@ public class PlayerNameFrame extends javax.swing.JFrame {
         Player newPlayer = new Player();
         String player;
         String name = this.nameTextField.getText();
+        try {
         newPlayer.setName(name);
         MainMenuFrame mainMenuFrame = new MainMenuFrame();
         mainMenuFrame.setPlayer(newPlayer);
@@ -133,6 +135,10 @@ public class PlayerNameFrame extends javax.swing.JFrame {
         }
         mainMenuFrame.setVisible(true);        
         this.dispose();
+        }
+        catch (InvalidNameException e) {
+            continueButtonActionPerformed(evt);
+        }
     }//GEN-LAST:event_continueButtonActionPerformed
 
     public JButton getContinueButton() {

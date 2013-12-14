@@ -7,7 +7,7 @@ import rpsls.interfaces.DisplayInfo;
 public class Results implements DisplayInfo {
 
     @Override
-    public void display(int playerAttack, int computerAttack) {
+    public void displayMatch(int playerAttack, int computerAttack) {
 
 
 
