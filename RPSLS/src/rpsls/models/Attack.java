@@ -35,8 +35,36 @@ public class Attack implements Comparable {
         Attack other = (Attack)object;
         if (this.attackType == other.attackType) return 0;
         
-        if(this.attackType == AttackType.ROCK && other.getAttackType() == AttackType.SCISSORS) return 1;
         if(this.attackType == AttackType.ROCK && other.getAttackType() == AttackType.PAPER) return -1;
+        if(this.attackType == AttackType.ROCK && other.getAttackType() == AttackType.SPOCK) return -1;
+        
+        if(this.attackType == AttackType.ROCK && other.getAttackType() == AttackType.SCISSORS) return 1;
+        if(this.attackType == AttackType.ROCK && other.getAttackType() == AttackType.LIZARD) return 1;
+        
+        if(this.attackType == AttackType.PAPER && other.getAttackType() == AttackType.ROCK) return 1;
+        if(this.attackType == AttackType.PAPER && other.getAttackType() == AttackType.SPOCK) return 1;
+        
+        if(this.attackType == AttackType.PAPER && other.getAttackType() == AttackType.SCISSORS) return -1;
+        if(this.attackType == AttackType.PAPER && other.getAttackType() == AttackType.LIZARD) return -1;
+        
+        if(this.attackType == AttackType.SCISSORS && other.getAttackType() == AttackType.PAPER) return 1;
+        if(this.attackType == AttackType.SCISSORS && other.getAttackType() == AttackType.LIZARD) return 1;
+        
+        if(this.attackType == AttackType.SCISSORS && other.getAttackType() == AttackType.ROCK) return -1;
+        if(this.attackType == AttackType.SCISSORS && other.getAttackType() == AttackType.SPOCK) return -1;
+        
+        if(this.attackType == AttackType.LIZARD && other.getAttackType() == AttackType.PAPER) return 1;
+        if(this.attackType == AttackType.LIZARD && other.getAttackType() == AttackType.SPOCK) return 1;
+        
+        if(this.attackType == AttackType.LIZARD && other.getAttackType() == AttackType.ROCK) return -1;
+        if(this.attackType == AttackType.LIZARD && other.getAttackType() == AttackType.SCISSORS) return -1;
+        
+        if(this.attackType == AttackType.SPOCK && other.getAttackType() == AttackType.ROCK) return 1;
+        if(this.attackType == AttackType.SPOCK && other.getAttackType() == AttackType.SCISSORS) return 1;
+        
+        if(this.attackType == AttackType.SPOCK && other.getAttackType() == AttackType.PAPER) return -1;
+        if(this.attackType == AttackType.SPOCK && other.getAttackType() == AttackType.LIZARD) return -1;
+        
         return 0;
     }
     

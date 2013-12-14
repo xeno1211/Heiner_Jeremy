@@ -35,7 +35,7 @@ public class Attacks {
         char winner = '-';
         Random random = new Random();
         long range = (long) end - (long) start + 1;
-        long fraction = (long) (range * random.nextDouble());
+        long fraction = (long) (range * random.nextInt());
         setComputerChoice((int) (fraction + start));
 
 

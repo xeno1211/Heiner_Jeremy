@@ -6,6 +6,7 @@ package rpsls.gui;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
+import rpsls.controls.RunMatch;
 import rpsls.enums.AttackType;
 import rpsls.models.*;
 
@@ -185,30 +186,33 @@ public class GameFrame extends javax.swing.JFrame {
        //int playerChoice=2;
        //getAttack()
        //getAttack(this.attack); 
-        Attack playerAttack = new Attack(AttackType.PAPER, this.player);
-        Attack computerAttack = new Attack(AttackType.)
-       
-       resultsTextArea.setText("Paper, \n"+ getAttackText() + "\n"+ getResultsText());
+        RunMatch runMatch = new RunMatch(AttackType.PAPER);
+        Match match = runMatch.run(this.set);
+        resultsTextArea.setText(match.getMatchDescription());
     }//GEN-LAST:event_buttonPaperActionPerformed
 
     private void buttonRockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRockActionPerformed
-        //playerChoice=1;
-        resultsTextArea.setText("Rock, \n"+ getAttackText() +"\n"+ getResultsText());
+        RunMatch runMatch = new RunMatch(AttackType.ROCK);
+        Match match = runMatch.run(this.set);
+        resultsTextArea.setText(match.getMatchDescription());
     }//GEN-LAST:event_buttonRockActionPerformed
 
     private void buttonScissorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonScissorsActionPerformed
-        //playerChoice=3;
-        resultsTextArea.setText("Scissors, \n"+ getAttackText() +"\n"+ getResultsText());
+      RunMatch runMatch = new RunMatch(AttackType.SCISSORS);
+        Match match = runMatch.run(this.set);
+        resultsTextArea.setText(match.getMatchDescription());
     }//GEN-LAST:event_buttonScissorsActionPerformed
 
     private void buttonLizardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLizardActionPerformed
-        //playerChoice=5;
-        resultsTextArea.setText("Lizard, \n"+ getAttackText() +"\n"+ getResultsText());
+        RunMatch runMatch = new RunMatch(AttackType.LIZARD);
+        Match match = runMatch.run(this.set);
+        resultsTextArea.setText(match.getMatchDescription());
     }//GEN-LAST:event_buttonLizardActionPerformed
 
     private void buttonSpockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSpockActionPerformed
-        //playerChoice=4;
-        resultsTextArea.setText("Spock, \n"+ getAttackText() +"\n"+ getResultsText());
+        RunMatch runMatch = new RunMatch(AttackType.SPOCK);
+        Match match = runMatch.run(this.set);
+        resultsTextArea.setText(match.getMatchDescription());
     }//GEN-LAST:event_buttonSpockActionPerformed
                       
                                  

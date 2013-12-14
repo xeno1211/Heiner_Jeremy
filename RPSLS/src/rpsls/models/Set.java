@@ -4,22 +4,38 @@
  */
 package rpsls.models;
 
+import rpsls.enums.Winner;
+
 
 /**
  *
  * @author Luke
  */
 public class Set {
-    Player player1;
-    Player computer;
-    int player1Score;
-    int computerScore;
+    private int player1Score;
+    private int computerScore;
     
-    public Set(Player player, Player computer) {
+    public Set() {
         
     }
     
     public void addMatch(Match match) {
-        return null;
+        if (match.getWinner() == Winner.PLAYER1) player1Score++;
+        else if (match.getWinner() == Winner.PLAYER2) computerScore++;
+        // Do nothing if a tie
+    }
+
+    /**
+     * @return the player1Score
+     */
+    public int getPlayer1Score() {
+        return player1Score;
+    }
+
+    /**
+     * @return the computerScore
+     */
+    public int getComputerScore() {
+        return computerScore;
     }
 }
